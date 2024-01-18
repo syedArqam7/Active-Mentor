@@ -1,0 +1,1296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* NATIVE_AITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NATIVE_AITests.m */; };
+		06B7544B1A9D8C02C994329A /* libPods-NATIVE_AI-NATIVE_AITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5677E3BE70BCDC4FCAC255E /* libPods-NATIVE_AI-NATIVE_AITests.a */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* NATIVE_AITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NATIVE_AITests.m */; };
+		321830FD03E9CC7EF4AE6A4F /* libPods-NATIVE_AI-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37927C706A799A3C724E1E05 /* libPods-NATIVE_AI-tvOS.a */; };
+		8055D94643BB88B4EFEFB771 /* libPods-NATIVE_AI-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB48D8CF25AF4CC5C17A440 /* libPods-NATIVE_AI-tvOSTests.a */; };
+		D916F81902A5A3BD63913A85 /* libPods-NATIVE_AI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF6E9E969AF7E1552465C63 /* libPods-NATIVE_AI.a */; };
+		FA8753D124C8D7550079AEF9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753D024C8D7550079AEF9 /* Utility.swift */; };
+		FA8753D424C8D78F0079AEF9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753D324C8D78F0079AEF9 /* Strings.swift */; };
+		FA8753DC24C8D9A40079AEF9 /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753DB24C8D9A30079AEF9 /* Mediator.swift */; };
+		FA8753E224C8DA1E0079AEF9 /* TensorFlowObjectDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753E024C8DA180079AEF9 /* TensorFlowObjectDetection.swift */; };
+		FA8753E324C8DA1E0079AEF9 /* InferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753E124C8DA1E0079AEF9 /* InferenceViewController.swift */; };
+		FA8753E724C8DA4A0079AEF9 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753E524C8DA450079AEF9 /* PreviewView.swift */; };
+		FA8753E824C8DA4A0079AEF9 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753E624C8DA4A0079AEF9 /* CameraFeedManager.swift */; };
+		FA8753EB24C8DCA90079AEF9 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753EA24C8DCA90079AEF9 /* InfoCell.swift */; };
+		FA8753F024C8DCCC0079AEF9 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753ED24C8DCC10079AEF9 /* CVPixelBufferExtension.swift */; };
+		FA8753F124C8DCCC0079AEF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753EE24C8DCC60079AEF9 /* StringExtension.swift */; };
+		FA8753F224C8DCCC0079AEF9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8753EF24C8DCCC0079AEF9 /* UIColorExtension.swift */; };
+		FA8753FA24C8DD130079AEF9 /* detect_foot_football.tflite in Resources */ = {isa = PBXBuildFile; fileRef = FA8753F524C8DCFB0079AEF9 /* detect_foot_football.tflite */; };
+		FA8753FB24C8DD130079AEF9 /* detect.tflite in Resources */ = {isa = PBXBuildFile; fileRef = FA8753F624C8DD000079AEF9 /* detect.tflite */; };
+		FA8753FC24C8DD130079AEF9 /* label.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8753F724C8DD060079AEF9 /* label.txt */; };
+		FA8753FD24C8DD130079AEF9 /* labelmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8753F824C8DD0C0079AEF9 /* labelmap.txt */; };
+		FA87540124C8DD3C0079AEF9 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87540024C8DD3C0079AEF9 /* ModelDataHandler.swift */; };
+		FA87540524C8DD7A0079AEF9 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87540324C8DD740079AEF9 /* OverlayView.swift */; };
+		FA87540624C8DD7A0079AEF9 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87540424C8DD790079AEF9 /* CurvedView.swift */; };
+		FA87540924C8DDEF0079AEF9 /* TensorFlowPoseEstimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87540824C8DDEF0079AEF9 /* TensorFlowPoseEstimation.swift */; };
+		FA87540B24C8DEA00079AEF9 /* ConstantsPE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87540A24C8DEA00079AEF9 /* ConstantsPE.swift */; };
+		FA87540F24C8DEC50079AEF9 /* OverlayViewPE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87540E24C8DEC50079AEF9 /* OverlayViewPE.swift */; };
+		FA87541224C8DEEC0079AEF9 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */ = {isa = PBXBuildFile; fileRef = FA87541124C8DEEC0079AEF9 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */; };
+		FA87541724C8DF1C0079AEF9 /* CGSizeExtensionPE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87541424C8DF0F0079AEF9 /* CGSizeExtensionPE.swift */; };
+		FA87541824C8DF1C0079AEF9 /* TFLiteExtensionPE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87541524C8DF160079AEF9 /* TFLiteExtensionPE.swift */; };
+		FA87541924C8DF1C0079AEF9 /* CVPixelBufferExtensionPE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87541624C8DF1C0079AEF9 /* CVPixelBufferExtensionPE.swift */; };
+		FA87541C24C8DF8F0079AEF9 /* ModelDataHandlerPE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87541B24C8DF8F0079AEF9 /* ModelDataHandlerPE.swift */; };
+		FA87541F24C8DFBE0079AEF9 /* CameraFeedManagerPE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87541E24C8DFBE0079AEF9 /* CameraFeedManagerPE.swift */; };
+		FA87542124C8DFE00079AEF9 /* TensorFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87542024C8DFDF0079AEF9 /* TensorFlow.swift */; };
+		FA87542424C8E0070079AEF9 /* AiCameraInteract.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87542324C8E0070079AEF9 /* AiCameraInteract.m */; };
+		FA87542824C8E0260079AEF9 /* AiCameraInteract.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87542524C8E01A0079AEF9 /* AiCameraInteract.swift */; };
+		FA87542924C8E0260079AEF9 /* AiCameraInteract+RecordVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87542624C8E0200079AEF9 /* AiCameraInteract+RecordVideo.swift */; };
+		FA87542A24C8E0260079AEF9 /* AiCameraInteract+StartCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87542724C8E0260079AEF9 /* AiCameraInteract+StartCamera.swift */; };
+		FA87542D24C8E0480079AEF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA87542C24C8E0480079AEF9 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = NATIVE_AI;
+		};
+		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
+			remoteInfo = "NATIVE_AI-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		00E356EE1AD99517003FC87E /* NATIVE_AITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NATIVE_AITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* NATIVE_AITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NATIVE_AITests.m; sourceTree = "<group>"; };
+		0456DC3A88D0E7E7BB5B9905 /* Pods-NATIVE_AI-NATIVE_AITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NATIVE_AI-NATIVE_AITests.release.xcconfig"; path = "Target Support Files/Pods-NATIVE_AI-NATIVE_AITests/Pods-NATIVE_AI-NATIVE_AITests.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* NATIVE_AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NATIVE_AI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NATIVE_AI/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NATIVE_AI/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NATIVE_AI/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NATIVE_AI/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NATIVE_AI/main.m; sourceTree = "<group>"; };
+		1ED28B25510F84AB4D44F6E5 /* Pods-NATIVE_AI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NATIVE_AI.debug.xcconfig"; path = "Target Support Files/Pods-NATIVE_AI/Pods-NATIVE_AI.debug.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* NATIVE_AI-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NATIVE_AI-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* NATIVE_AI-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NATIVE_AI-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35832CB42C87EBAFB770070B /* Pods-NATIVE_AI-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NATIVE_AI-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-NATIVE_AI-tvOS/Pods-NATIVE_AI-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		37927C706A799A3C724E1E05 /* libPods-NATIVE_AI-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NATIVE_AI-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39B1DCF19D43B8A9F60BE1A0 /* Pods-NATIVE_AI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NATIVE_AI.release.xcconfig"; path = "Target Support Files/Pods-NATIVE_AI/Pods-NATIVE_AI.release.xcconfig"; sourceTree = "<group>"; };
+		7FB48D8CF25AF4CC5C17A440 /* libPods-NATIVE_AI-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NATIVE_AI-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF6E9E969AF7E1552465C63 /* libPods-NATIVE_AI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NATIVE_AI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5677E3BE70BCDC4FCAC255E /* libPods-NATIVE_AI-NATIVE_AITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NATIVE_AI-NATIVE_AITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A821AE235AE8CAF0AD978C69 /* Pods-NATIVE_AI-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NATIVE_AI-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-NATIVE_AI-tvOSTests/Pods-NATIVE_AI-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AEEA470B934E21B8E42D7829 /* Pods-NATIVE_AI-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NATIVE_AI-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-NATIVE_AI-tvOSTests/Pods-NATIVE_AI-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		B3E3133697D71FE2FE698740 /* Pods-NATIVE_AI-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NATIVE_AI-tvOS.release.xcconfig"; path = "Target Support Files/Pods-NATIVE_AI-tvOS/Pods-NATIVE_AI-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		BBE0247DC370B407B82EE62B /* Pods-NATIVE_AI-NATIVE_AITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NATIVE_AI-NATIVE_AITests.debug.xcconfig"; path = "Target Support Files/Pods-NATIVE_AI-NATIVE_AITests/Pods-NATIVE_AI-NATIVE_AITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FA8753CF24C8D7540079AEF9 /* NATIVE_AI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NATIVE_AI-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA8753D024C8D7550079AEF9 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		FA8753D324C8D78F0079AEF9 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		FA8753DB24C8D9A30079AEF9 /* Mediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
+		FA8753E024C8DA180079AEF9 /* TensorFlowObjectDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TensorFlowObjectDetection.swift; sourceTree = "<group>"; };
+		FA8753E124C8DA1E0079AEF9 /* InferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InferenceViewController.swift; sourceTree = "<group>"; };
+		FA8753E524C8DA450079AEF9 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		FA8753E624C8DA4A0079AEF9 /* CameraFeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		FA8753EA24C8DCA90079AEF9 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		FA8753ED24C8DCC10079AEF9 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
+		FA8753EE24C8DCC60079AEF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		FA8753EF24C8DCCC0079AEF9 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		FA8753F524C8DCFB0079AEF9 /* detect_foot_football.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = detect_foot_football.tflite; sourceTree = "<group>"; };
+		FA8753F624C8DD000079AEF9 /* detect.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = detect.tflite; sourceTree = "<group>"; };
+		FA8753F724C8DD060079AEF9 /* label.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = label.txt; sourceTree = "<group>"; };
+		FA8753F824C8DD0C0079AEF9 /* labelmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labelmap.txt; sourceTree = "<group>"; };
+		FA87540024C8DD3C0079AEF9 /* ModelDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
+		FA87540324C8DD740079AEF9 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		FA87540424C8DD790079AEF9 /* CurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
+		FA87540824C8DDEF0079AEF9 /* TensorFlowPoseEstimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TensorFlowPoseEstimation.swift; sourceTree = "<group>"; };
+		FA87540A24C8DEA00079AEF9 /* ConstantsPE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsPE.swift; sourceTree = "<group>"; };
+		FA87540E24C8DEC50079AEF9 /* OverlayViewPE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewPE.swift; sourceTree = "<group>"; };
+		FA87541124C8DEEC0079AEF9 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite; sourceTree = "<group>"; };
+		FA87541424C8DF0F0079AEF9 /* CGSizeExtensionPE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensionPE.swift; sourceTree = "<group>"; };
+		FA87541524C8DF160079AEF9 /* TFLiteExtensionPE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLiteExtensionPE.swift; sourceTree = "<group>"; };
+		FA87541624C8DF1C0079AEF9 /* CVPixelBufferExtensionPE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtensionPE.swift; sourceTree = "<group>"; };
+		FA87541B24C8DF8F0079AEF9 /* ModelDataHandlerPE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataHandlerPE.swift; sourceTree = "<group>"; };
+		FA87541E24C8DFBE0079AEF9 /* CameraFeedManagerPE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFeedManagerPE.swift; sourceTree = "<group>"; };
+		FA87542024C8DFDF0079AEF9 /* TensorFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TensorFlow.swift; sourceTree = "<group>"; };
+		FA87542324C8E0070079AEF9 /* AiCameraInteract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AiCameraInteract.m; sourceTree = "<group>"; };
+		FA87542524C8E01A0079AEF9 /* AiCameraInteract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AiCameraInteract.swift; sourceTree = "<group>"; };
+		FA87542624C8E0200079AEF9 /* AiCameraInteract+RecordVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AiCameraInteract+RecordVideo.swift"; sourceTree = "<group>"; };
+		FA87542724C8E0260079AEF9 /* AiCameraInteract+StartCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AiCameraInteract+StartCamera.swift"; sourceTree = "<group>"; };
+		FA87542C24C8E0480079AEF9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B7544B1A9D8C02C994329A /* libPods-NATIVE_AI-NATIVE_AITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D916F81902A5A3BD63913A85 /* libPods-NATIVE_AI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4781E0B4A5D006451C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				321830FD03E9CC7EF4AE6A4F /* libPods-NATIVE_AI-tvOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48D1E0B4A5D006451C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8055D94643BB88B4EFEFB771 /* libPods-NATIVE_AI-tvOSTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* NATIVE_AITests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* NATIVE_AITests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = NATIVE_AITests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* NATIVE_AI */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753CB24C8D6CB0079AEF9 /* AppDelegate */,
+				FA8753CC24C8D6E20079AEF9 /* Supporting Files */,
+				FA8753D724C8D94E0079AEF9 /* Module */,
+			);
+			name = NATIVE_AI;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
+				9CF6E9E969AF7E1552465C63 /* libPods-NATIVE_AI.a */,
+				A5677E3BE70BCDC4FCAC255E /* libPods-NATIVE_AI-NATIVE_AITests.a */,
+				37927C706A799A3C724E1E05 /* libPods-NATIVE_AI-tvOS.a */,
+				7FB48D8CF25AF4CC5C17A440 /* libPods-NATIVE_AI-tvOSTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* NATIVE_AI */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* NATIVE_AITests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				B782E8D469618EB3983AEDA4 /* Pods */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* NATIVE_AI.app */,
+				00E356EE1AD99517003FC87E /* NATIVE_AITests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* NATIVE_AI-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* NATIVE_AI-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B782E8D469618EB3983AEDA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1ED28B25510F84AB4D44F6E5 /* Pods-NATIVE_AI.debug.xcconfig */,
+				39B1DCF19D43B8A9F60BE1A0 /* Pods-NATIVE_AI.release.xcconfig */,
+				BBE0247DC370B407B82EE62B /* Pods-NATIVE_AI-NATIVE_AITests.debug.xcconfig */,
+				0456DC3A88D0E7E7BB5B9905 /* Pods-NATIVE_AI-NATIVE_AITests.release.xcconfig */,
+				35832CB42C87EBAFB770070B /* Pods-NATIVE_AI-tvOS.debug.xcconfig */,
+				B3E3133697D71FE2FE698740 /* Pods-NATIVE_AI-tvOS.release.xcconfig */,
+				A821AE235AE8CAF0AD978C69 /* Pods-NATIVE_AI-tvOSTests.debug.xcconfig */,
+				AEEA470B934E21B8E42D7829 /* Pods-NATIVE_AI-tvOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA8753CB24C8D6CB0079AEF9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FA8753CC24C8D6E20079AEF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753CE24C8D7450079AEF9 /* Utility */,
+				FA8753D224C8D7840079AEF9 /* Strings */,
+				FA8753CD24C8D7310079AEF9 /* Header */,
+				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA8753CD24C8D7310079AEF9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753CF24C8D7540079AEF9 /* NATIVE_AI-Bridging-Header.h */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		FA8753CE24C8D7450079AEF9 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753D024C8D7550079AEF9 /* Utility.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		FA8753D224C8D7840079AEF9 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753D324C8D78F0079AEF9 /* Strings.swift */,
+			);
+			name = Strings;
+			sourceTree = "<group>";
+		};
+		FA8753D724C8D94E0079AEF9 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753D824C8D9710079AEF9 /* Mediator */,
+				FA8753DD24C8D9B00079AEF9 /* TensorFlow */,
+				FA87542224C8DFED0079AEF9 /* AiCameraInteract */,
+			);
+			name = Module;
+			sourceTree = "<group>";
+		};
+		FA8753D824C8D9710079AEF9 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753DB24C8D9A30079AEF9 /* Mediator.swift */,
+			);
+			name = Mediator;
+			sourceTree = "<group>";
+		};
+		FA8753DD24C8D9B00079AEF9 /* TensorFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753DE24C8D9BF0079AEF9 /* TensorFlowObjectDetection */,
+				FA8753DF24C8D9F50079AEF9 /* TensorFlowPoseEstimation */,
+				FA87542024C8DFDF0079AEF9 /* TensorFlow.swift */,
+			);
+			name = TensorFlow;
+			sourceTree = "<group>";
+		};
+		FA8753DE24C8D9BF0079AEF9 /* TensorFlowObjectDetection */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753E424C8DA280079AEF9 /* ViewControllers */,
+				FA8753E924C8DC960079AEF9 /* Camera Feed */,
+				FA8753EC24C8DCAE0079AEF9 /* Cell */,
+				FA8753F324C8DCD50079AEF9 /* Extensions */,
+				FA8753F424C8DCE70079AEF9 /* Model */,
+				FA8753FF24C8DD2E0079AEF9 /* ModelDataHandler */,
+				FA87540224C8DD410079AEF9 /* Views */,
+			);
+			name = TensorFlowObjectDetection;
+			sourceTree = "<group>";
+		};
+		FA8753DF24C8D9F50079AEF9 /* TensorFlowPoseEstimation */ = {
+			isa = PBXGroup;
+			children = (
+				FA87540724C8DDD60079AEF9 /* ViewControllers */,
+				FA87541D24C8DFAD0079AEF9 /* Camera Feed */,
+				FA87540C24C8DEA30079AEF9 /* Constants */,
+				FA87541024C8DEDA0079AEF9 /* Model */,
+				FA87541324C8DEF50079AEF9 /* Extensions */,
+				FA87541A24C8DF7E0079AEF9 /* ModelDataHandler */,
+				FA87540D24C8DEB00079AEF9 /* Views */,
+			);
+			name = TensorFlowPoseEstimation;
+			sourceTree = "<group>";
+		};
+		FA8753E424C8DA280079AEF9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753E024C8DA180079AEF9 /* TensorFlowObjectDetection.swift */,
+				FA8753E124C8DA1E0079AEF9 /* InferenceViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA8753E924C8DC960079AEF9 /* Camera Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753E624C8DA4A0079AEF9 /* CameraFeedManager.swift */,
+				FA8753E524C8DA450079AEF9 /* PreviewView.swift */,
+			);
+			name = "Camera Feed";
+			sourceTree = "<group>";
+		};
+		FA8753EC24C8DCAE0079AEF9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753EA24C8DCA90079AEF9 /* InfoCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		FA8753F324C8DCD50079AEF9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753ED24C8DCC10079AEF9 /* CVPixelBufferExtension.swift */,
+				FA8753EE24C8DCC60079AEF9 /* StringExtension.swift */,
+				FA8753EF24C8DCCC0079AEF9 /* UIColorExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FA8753F424C8DCE70079AEF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA8753F824C8DD0C0079AEF9 /* labelmap.txt */,
+				FA8753F624C8DD000079AEF9 /* detect.tflite */,
+				FA8753F724C8DD060079AEF9 /* label.txt */,
+				FA8753F524C8DCFB0079AEF9 /* detect_foot_football.tflite */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FA8753FF24C8DD2E0079AEF9 /* ModelDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				FA87540024C8DD3C0079AEF9 /* ModelDataHandler.swift */,
+			);
+			name = ModelDataHandler;
+			sourceTree = "<group>";
+		};
+		FA87540224C8DD410079AEF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA87540324C8DD740079AEF9 /* OverlayView.swift */,
+				FA87540424C8DD790079AEF9 /* CurvedView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FA87540724C8DDD60079AEF9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA87540824C8DDEF0079AEF9 /* TensorFlowPoseEstimation.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA87540C24C8DEA30079AEF9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FA87540A24C8DEA00079AEF9 /* ConstantsPE.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		FA87540D24C8DEB00079AEF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA87540E24C8DEC50079AEF9 /* OverlayViewPE.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FA87541024C8DEDA0079AEF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA87541124C8DEEC0079AEF9 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FA87541324C8DEF50079AEF9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA87541524C8DF160079AEF9 /* TFLiteExtensionPE.swift */,
+				FA87541624C8DF1C0079AEF9 /* CVPixelBufferExtensionPE.swift */,
+				FA87541424C8DF0F0079AEF9 /* CGSizeExtensionPE.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FA87541A24C8DF7E0079AEF9 /* ModelDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				FA87541B24C8DF8F0079AEF9 /* ModelDataHandlerPE.swift */,
+			);
+			name = ModelDataHandler;
+			sourceTree = "<group>";
+		};
+		FA87541D24C8DFAD0079AEF9 /* Camera Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FA87541E24C8DFBE0079AEF9 /* CameraFeedManagerPE.swift */,
+			);
+			name = "Camera Feed";
+			sourceTree = "<group>";
+		};
+		FA87542224C8DFED0079AEF9 /* AiCameraInteract */ = {
+			isa = PBXGroup;
+			children = (
+				FA87542324C8E0070079AEF9 /* AiCameraInteract.m */,
+				FA87542B24C8E0320079AEF9 /* AiCameraInteract+Extension */,
+				FA87542C24C8E0480079AEF9 /* Main.storyboard */,
+			);
+			name = AiCameraInteract;
+			sourceTree = "<group>";
+		};
+		FA87542B24C8E0320079AEF9 /* AiCameraInteract+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA87542524C8E01A0079AEF9 /* AiCameraInteract.swift */,
+				FA87542624C8E0200079AEF9 /* AiCameraInteract+RecordVideo.swift */,
+				FA87542724C8E0260079AEF9 /* AiCameraInteract+StartCamera.swift */,
+			);
+			name = "AiCameraInteract+Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* NATIVE_AITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NATIVE_AITests" */;
+			buildPhases = (
+				CBE1593786843C3426A55288 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = NATIVE_AITests;
+			productName = NATIVE_AITests;
+			productReference = 00E356EE1AD99517003FC87E /* NATIVE_AITests.xctest */;
+			productType = "com.apple.product-type.bundle.com.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* NATIVE_AI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NATIVE_AI" */;
+			buildPhases = (
+				6F844EEA0BE4D6098865B1B4 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NATIVE_AI;
+			productName = NATIVE_AI;
+			productReference = 13B07F961A680F5B00A75B9A /* NATIVE_AI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D02E47A1E0B4A5D006451C7 /* NATIVE_AI-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NATIVE_AI-tvOS" */;
+			buildPhases = (
+				C0334B93E217EACCC84F0923 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F122414F3F0027D42C /* Start Packager */,
+				2D02E4771E0B4A5D006451C7 /* Sources */,
+				2D02E4781E0B4A5D006451C7 /* Frameworks */,
+				2D02E4791E0B4A5D006451C7 /* Resources */,
+				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NATIVE_AI-tvOS";
+			productName = "NATIVE_AI-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* NATIVE_AI-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D02E48F1E0B4A5D006451C7 /* NATIVE_AI-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NATIVE_AI-tvOSTests" */;
+			buildPhases = (
+				9A3A784DE451963AD1175093 /* [CP] Check Pods Manifest.lock */,
+				2D02E48C1E0B4A5D006451C7 /* Sources */,
+				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
+				2D02E48E1E0B4A5D006451C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
+			);
+			name = "NATIVE_AI-tvOSTests";
+			productName = "NATIVE_AI-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* NATIVE_AI-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.com.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 3F5C76J9ZR;
+						LastSwiftMigration = 1150;
+					};
+					2D02E47A1E0B4A5D006451C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					2D02E48F1E0B4A5D006451C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NATIVE_AI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* NATIVE_AI */,
+				00E356ED1AD99517003FC87E /* NATIVE_AITests */,
+				2D02E47A1E0B4A5D006451C7 /* NATIVE_AI-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* NATIVE_AI-tvOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8753FD24C8DD130079AEF9 /* labelmap.txt in Resources */,
+				FA8753FB24C8DD130079AEF9 /* detect.tflite in Resources */,
+				FA8753FA24C8DD130079AEF9 /* detect_foot_football.tflite in Resources */,
+				FA87542D24C8E0480079AEF9 /* Main.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				FA8753FC24C8DD130079AEF9 /* label.txt in Resources */,
+				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				FA87541224C8DEEC0079AEF9 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4791E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		6F844EEA0BE4D6098865B1B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NATIVE_AI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A3A784DE451963AD1175093 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NATIVE_AI-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0334B93E217EACCC84F0923 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NATIVE_AI-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBE1593786843C3426A55288 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NATIVE_AI-NATIVE_AITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F122414F3F0027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* NATIVE_AITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA87542824C8E0260079AEF9 /* AiCameraInteract.swift in Sources */,
+				FA87542A24C8E0260079AEF9 /* AiCameraInteract+StartCamera.swift in Sources */,
+				FA8753E324C8DA1E0079AEF9 /* InferenceViewController.swift in Sources */,
+				FA87541F24C8DFBE0079AEF9 /* CameraFeedManagerPE.swift in Sources */,
+				FA87541724C8DF1C0079AEF9 /* CGSizeExtensionPE.swift in Sources */,
+				FA8753E724C8DA4A0079AEF9 /* PreviewView.swift in Sources */,
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				FA8753E224C8DA1E0079AEF9 /* TensorFlowObjectDetection.swift in Sources */,
+				FA87540F24C8DEC50079AEF9 /* OverlayViewPE.swift in Sources */,
+				FA8753F024C8DCCC0079AEF9 /* CVPixelBufferExtension.swift in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				FA8753F224C8DCCC0079AEF9 /* UIColorExtension.swift in Sources */,
+				FA8753D424C8D78F0079AEF9 /* Strings.swift in Sources */,
+				FA8753D124C8D7550079AEF9 /* Utility.swift in Sources */,
+				FA87542424C8E0070079AEF9 /* AiCameraInteract.m in Sources */,
+				FA87540524C8DD7A0079AEF9 /* OverlayView.swift in Sources */,
+				FA8753F124C8DCCC0079AEF9 /* StringExtension.swift in Sources */,
+				FA87541824C8DF1C0079AEF9 /* TFLiteExtensionPE.swift in Sources */,
+				FA87540124C8DD3C0079AEF9 /* ModelDataHandler.swift in Sources */,
+				FA87540924C8DDEF0079AEF9 /* TensorFlowPoseEstimation.swift in Sources */,
+				FA8753E824C8DA4A0079AEF9 /* CameraFeedManager.swift in Sources */,
+				FA87541C24C8DF8F0079AEF9 /* ModelDataHandlerPE.swift in Sources */,
+				FA8753DC24C8D9A40079AEF9 /* Mediator.swift in Sources */,
+				FA87542124C8DFE00079AEF9 /* TensorFlow.swift in Sources */,
+				FA87542924C8E0260079AEF9 /* AiCameraInteract+RecordVideo.swift in Sources */,
+				FA8753EB24C8DCA90079AEF9 /* InfoCell.swift in Sources */,
+				FA87540B24C8DEA00079AEF9 /* ConstantsPE.swift in Sources */,
+				FA87541924C8DF1C0079AEF9 /* CVPixelBufferExtensionPE.swift in Sources */,
+				FA87540624C8DD7A0079AEF9 /* CurvedView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4771E0B4A5D006451C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
+				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48C1E0B4A5D006451C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCD954D1E0B4F2C00145EB5 /* NATIVE_AITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* NATIVE_AI */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D02E47A1E0B4A5D006451C7 /* NATIVE_AI-tvOS */;
+			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13B07FB21A68108700A75B9A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = NATIVE_AI;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBE0247DC370B407B82EE62B /* Pods-NATIVE_AI-NATIVE_AITests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NATIVE_AITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NATIVE_AI.app/NATIVE_AI";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0456DC3A88D0E7E7BB5B9905 /* Pods-NATIVE_AI-NATIVE_AITests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = NATIVE_AITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NATIVE_AI.app/NATIVE_AI";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ED28B25510F84AB4D44F6E5 /* Pods-NATIVE_AI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F5C76J9ZR;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FB_SONARKIT_ENABLED=1",
+				);
+				INFOPLIST_FILE = NATIVE_AI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.hoa;
+				PRODUCT_NAME = NATIVE_AI;
+				SWIFT_OBJC_BRIDGING_HEADER = "NATIVE_AI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39B1DCF19D43B8A9F60BE1A0 /* Pods-NATIVE_AI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F5C76J9ZR;
+				INFOPLIST_FILE = NATIVE_AI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.hoa;
+				PRODUCT_NAME = NATIVE_AI;
+				SWIFT_OBJC_BRIDGING_HEADER = "NATIVE_AI-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		2D02E4971E0B4A5E006451C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35832CB42C87EBAFB770070B /* Pods-NATIVE_AI-tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "NATIVE_AI-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.NATIVE_AI-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		2D02E4981E0B4A5E006451C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3E3133697D71FE2FE698740 /* Pods-NATIVE_AI-tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "NATIVE_AI-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.NATIVE_AI-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		2D02E4991E0B4A5E006451C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A821AE235AE8CAF0AD978C69 /* Pods-NATIVE_AI-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "NATIVE_AI-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.NATIVE_AI-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NATIVE_AI-tvOS.app/NATIVE_AI-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		2D02E49A1E0B4A5E006451C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEEA470B934E21B8E42D7829 /* Pods-NATIVE_AI-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "NATIVE_AI-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.NATIVE_AI-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NATIVE_AI-tvOS.app/NATIVE_AI-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NATIVE_AITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NATIVE_AI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NATIVE_AI-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D02E4971E0B4A5E006451C7 /* Debug */,
+				2D02E4981E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NATIVE_AI-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D02E4991E0B4A5E006451C7 /* Debug */,
+				2D02E49A1E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NATIVE_AI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
