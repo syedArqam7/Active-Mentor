@@ -167,7 +167,8 @@ android {
 
     }
 
-    ndkVersion '21.3.6528147'
+    // ndkVersion '21.3.6528147'
+    ndkVersion '20.1.5948944'
 
     defaultConfig {
         applicationId "com.jogo"

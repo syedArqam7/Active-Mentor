@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   View,
@@ -6,11 +6,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  CheckBox,
   Button,
 } from 'react-native';
-import { BottomButton, Color } from '../GlobalStyles';
-import { useNavigation } from '@react-navigation/native';
+import CheckBox from 'react-native-check-box';
+import {BottomButton, Color} from '../GlobalStyles';
+import {useNavigation} from '@react-navigation/native';
 
 const CreateProfile = () => {
   const [isSelected, setSelection] = useState(false);
@@ -24,39 +24,51 @@ const CreateProfile = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
         <Text style={styles.header}>Create Your Profile</Text>
-        
+
         <TouchableOpacity style={styles.optionButton}>
           <Text style={styles.optionText}>Create New Profile</Text>
           <Text style={styles.newLabel}>NEW</Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity style={styles.optionButton}>
           <Text style={styles.optionText}>Continue With Your GYM ID</Text>
         </TouchableOpacity>
-        
+
         <Text style={styles.infoText}>
-          If you don't have a Gym ID, please ask your mentor for it or you can create a new profile
+          If you don't have a Gym ID, please ask your mentor for it or you can
+          create a new profile
         </Text>
-        
+
         <TouchableOpacity style={styles.optionButton}>
           <Text style={styles.optionText}>Try The Demo Now</Text>
         </TouchableOpacity>
-        
+
         <View style={styles.checkboxContainer}>
-          <CheckBox
+          {/* <CheckBox
             value={isSelected}
             onValueChange={setSelection}
-            style={[styles.checkbox, { borderColor: 'green' }]}
-            tintColors={{ true: Color.colorGreen, false: 'white' }}
+            style={[styles.checkbox, {borderColor: 'green'}]}
+            tintColors={{true: Color.colorGreen, false: 'white'}}
+          /> */}
+          <CheckBox
+            style={[styles.checkbox, {borderColor: 'green'}]}
+            checkedCheckBoxColor={Color.colorGreen}
+            uncheckedCheckBoxColor={'white'}
+            onClick={() => {
+              setSelection(!isSelected);
+            }}
+            isChecked={isSelected}
           />
           <Text style={styles.label}>I Accept All Term & Conditions</Text>
         </View>
-        
+
         <TouchableOpacity
-          style={[BottomButton, { backgroundColor: isSelected ? Color.colorGreen : 'gray' }]}
+          style={[
+            BottomButton,
+            {backgroundColor: isSelected ? Color.colorGreen : 'gray'},
+          ]}
           disabled={!isSelected}
-            onPress={handleNext}
-        >
+          onPress={handleNext}>
           <Text style={styles.nextButtonText}>NEXT</Text>
         </TouchableOpacity>
       </ScrollView>
@@ -111,8 +123,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   checkbox: {
-    alignSelf: "center",
-    
+    alignSelf: 'center',
+    // backgroundColor: 'white',
   },
   label: {
     color: 'white',
