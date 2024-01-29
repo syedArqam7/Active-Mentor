@@ -1,11 +1,11 @@
 /* fonts */
 export const FontFamily = {
-  poppinsMedium: "Poppins-Medium",
-  poppinsRegular: "Poppins-Regular",
-  poppinsBold: "Poppins-Bold",
-  poppinsSemiBold: "Poppins-SemiBold",
-  poppinsBlackItalic: "Poppins-BlackItalic",
-  sFProText: "SF Pro Text",
+  poppinsMedium: 'Poppins-Medium',
+  poppinsRegular: 'Poppins-Regular',
+  poppinsBold: 'Poppins-Bold',
+  poppinsSemiBold: 'Poppins-SemiBold',
+  poppinsBlackItalic: 'Poppins-BlackItalic',
+  sFProText: 'SF Pro Text',
 };
 
 /* font sizes */
@@ -21,23 +21,26 @@ export const FontSize = {
 
 /* Colors */
 export const Color = {
-  labelColorLightPrimary: "#000",
-  colorDimgray_100: "#696969",
-  colorDimgray_200: "#5d5d5d",
-  separatorColorDarkWithTransparency: "rgba(84, 84, 88, 0.65)",
-  labelColorDarkPrimary: "#fff",
-  colorLimegreen: "#6ed940",
-  colorGray_100: "#7f7f7f",
-  colorGray_200: "#1c1c1f",
-  colorGray_300: "rgba(255, 255, 255, 0.6)",
-  colorGray_400: "rgba(0, 0, 0, 0.04)",
-  fillColorLightTertiary: "rgba(118, 118, 128, 0.12)",
-  separatorColorLightWithTransparency: "rgba(60, 60, 67, 0.36)",
-  colorLime: "#4fff03",
-  colorBlack: "#000",
-  colorWhite: "#fff",
-  colorGreen: "#6ED940",
-  colorDarkolivegreen: "#133d01",
+  labelColorLightPrimary: '#000',
+  colorDimgray_100: '#696969',
+  colorDimgray_200: '#5d5d5d',
+  separatorColorDarkWithTransparency: 'rgba(84, 84, 88, 0.65)',
+  labelColorDarkPrimary: '#fff',
+  colorLimegreen: '#DA7235',
+  // colorLimegreen: '#6ed940',
+  colorGray_100: '#7f7f7f',
+  colorGray_200: '#1c1c1f',
+  colorGray_300: 'rgba(255, 255, 255, 0.6)',
+  colorGray_400: 'rgba(0, 0, 0, 0.04)',
+  fillColorLightTertiary: 'rgba(118, 118, 128, 0.12)',
+  separatorColorLightWithTransparency: 'rgba(60, 60, 67, 0.36)',
+  colorLime: '#F37125',
+  // colorLime: '#4fff03',
+  colorBlack: '#000',
+  colorWhite: '#fff',
+  colorGreen: '#FF6812',
+  colorDarkolivegreen: '#133d01',
+  colorOrange: '#FF6812',
 };
 
 /* Paddings */
@@ -57,14 +60,14 @@ export const Border = {
 
 /* Styles */
 export const LogoStyle = {
-  left: "8%",
-  justifyContent: "center",
-  position: "absolute",
-  width: "80%",
-  height: "30%",
+  left: '8%',
+  justifyContent: 'center',
+  position: 'absolute',
+  width: '80%',
+  height: '30%',
   top: 250,
-  alignItems: "center",
-  position: "absolute",
+  alignItems: 'center',
+  position: 'absolute',
 };
 
 export const BottomButton = {

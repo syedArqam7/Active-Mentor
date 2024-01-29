@@ -51,8 +51,8 @@ const CreateProfile = () => {
             tintColors={{true: Color.colorGreen, false: 'white'}}
           /> */}
           <CheckBox
-            style={[styles.checkbox, {borderColor: 'green'}]}
-            checkedCheckBoxColor={Color.colorGreen}
+            style={[styles.checkbox, {borderColor: 'orange'}]}
+            checkedCheckBoxColor={Color.colorOrange}
             uncheckedCheckBoxColor={'white'}
             onClick={() => {
               setSelection(!isSelected);
@@ -65,7 +65,7 @@ const CreateProfile = () => {
         <TouchableOpacity
           style={[
             BottomButton,
-            {backgroundColor: isSelected ? Color.colorGreen : 'gray'},
+            {backgroundColor: isSelected ? Color.colorOrange : 'gray'},
           ]}
           disabled={!isSelected}
           onPress={handleNext}>
