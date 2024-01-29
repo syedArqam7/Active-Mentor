@@ -36,7 +36,7 @@ const ExerciseMenu = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.menuTitle}>Exercises</Text>
-        {/* <Image style={styles.logo} source={require('../assets/am-logo.png')} /> */}
+        <Image style={styles.logo} source={require('../assets/orangeLogo.png')} />
       </View>
       <ScrollView
         horizontal
@@ -180,18 +180,20 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     // marginTop: 30,
-    marginVertical: 30,
+    marginVertical: 20,
+    // height: 100,
   },
   logo: {
-    width: '20%',
-    height: '30%',
-    marginVertical: 20,
-    marginRight: 20,
+    width: 50,
+    height: 45,
+    marginVertical: 25,
+    marginRight: 25,
   },
   menuTitle: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
     // textAlign: 'left',
     marginLeft: 20,
