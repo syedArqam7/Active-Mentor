@@ -22,16 +22,16 @@ import {
 
 const {
   ToastExample,
-  JugglingBridge: {startLandscapeActivity},
+  JugglingBridge: {startLandscapeActivity, startPortraitActivity},
 } = NativeModules;
 
 const ExerciseScreen = ({ route }) => {
   const navigation = useNavigation();
-  const [highScoreEnabled, setHighScoreEnabled] = useState(false);
+  const [landscapePosition, setLandscapePosition] = useState(false);
   const [frontCameraEnabled, setFrontCameraEnabled] = useState(false);
   const { selectedExercise } = route.params;
 
-  const toggleHighScoreSwitch = () => setHighScoreEnabled(previousState => !previousState);
+  const landscapePositionSwitch = () => setLandscapePosition(previousState => !previousState);
   const toggleFrontCameraSwitch = () => setFrontCameraEnabled(previousState => !previousState);
 
   const handleBackPress = () => {
@@ -44,10 +44,16 @@ const ExerciseScreen = ({ route }) => {
     if (frontCameraEnabled ) item.selectedCameraFacing = 'FRONT'
     else item.selectedCameraFacing = 'BACK'
     item.countDownMiliSeconds = 10000
-    startLandscapeActivity(
-      JSON.stringify({...item}),
-      parseInt(item.id),
-    );
+    if (landscapePosition)
+      startLandscapeActivity(
+        JSON.stringify({...item}),
+        parseInt(item.id),
+      );
+    else 
+      startPortraitActivity(
+        JSON.stringify({...item}),
+        parseInt(item.id),
+      );
   }
 
   return (
@@ -71,17 +77,17 @@ const ExerciseScreen = ({ route }) => {
           </Text>
         </View>
         <View style={styles.switchContainer}>
-          <Text style={styles.switchLabel}>Your High Score</Text>
+          <Text style={styles.switchLabel}>{landscapePosition ? 'Landscape' : 'Portrait'}</Text>
           <Switch
             trackColor={{ false: '#767577', true: '#81b0ff' }}
-            thumbColor={highScoreEnabled ? '#f5dd4b' : '#f4f3f4'}
+            thumbColor={landscapePosition ? '#f5dd4b' : '#f4f3f4'}
             ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleHighScoreSwitch}
-            value={highScoreEnabled}
+            onValueChange={landscapePositionSwitch}
+            value={landscapePosition}
           />
         </View>
         <View style={styles.switchContainer}>
-          <Text style={styles.switchLabel}>Front Camera</Text>
+          <Text style={styles.switchLabel}>{frontCameraEnabled ? 'Front Camera' : 'Back Camera'}</Text>
           <Switch
             trackColor={{ false: '#767577', true: '#81b0ff' }}
             thumbColor={frontCameraEnabled ? '#f5dd4b' : '#f4f3f4'}
