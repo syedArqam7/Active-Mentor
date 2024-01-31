@@ -46,9 +46,9 @@ public final class ModelManager {
             case POSENET:
                 model = new PoseNet();
                 break;
-            // case POSENET_FASTMODE:
-            //     model = new PoseNetFastMode();
-            //     break;
+            case POSENET_FASTMODE:
+                model = new PoseNetFastMode();
+                break;
             case OLD_POSENET:
                 model = new OldPoseNet();
                 break;
