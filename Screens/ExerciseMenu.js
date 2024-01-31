@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   score: {
-    color: 'limegreen',
+    color: 'white',
     fontSize: 48,
     fontWeight: 'bold',
   },

@@ -17,7 +17,8 @@ const CreateProfile = () => {
   const navigation = useNavigation();
   const handleNext = () => {
     // Handle next button press
-    navigation.navigate('ExerciseMenu');
+    // navigation.navigate('ExerciseMenu');
+    navigation.navigate('ExploreScreen');
   };
 
   return (

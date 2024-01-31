@@ -38,9 +38,9 @@ export const Color = {
   // colorLime: '#4fff03',
   colorBlack: '#000',
   colorWhite: '#fff',
-  colorGreen: '#FF6812',
+  colorGreen: '#FF7729',
   colorDarkolivegreen: '#133d01',
-  colorOrange: '#FF6812',
+  colorOrange: '#FF7729',
 };
 
 /* Paddings */

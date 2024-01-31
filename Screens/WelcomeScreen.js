@@ -25,7 +25,7 @@ const WelcomeScreen = () => {
         <Image
           style={styles.logo}
           resizeMode="cover"
-          source={require('../assets/orangeLogo.png')}
+          source={require('../assets/yellow.png')}
         />
         <Text style={styles.subtitle}>
           Great Health Is The Key Of Great Success
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   button: {
-    backgroundColor: Color.colorOrange,
+    backgroundColor: '#EC9F05',
+    // backgroundColor: Color.colorOrange,
     paddingHorizontal: 60,
     paddingVertical: 10,
     borderRadius: 25,

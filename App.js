@@ -9,6 +9,7 @@ import ExerciseMenu from "./Screens/ExerciseMenu";
 import ExerciseScreen from "./Screens/ExerciseScreen";
 import ExerciseLeaderBoard from "./Screens/ExerciseLeaderBoard";
 import ExerciseSummary from "./Screens/ExerciseSummary";
+import ExploreScreen from "./Screens/ExploreScreen";
 import AI from "./AI";
 
 const Stack = createNativeStackNavigator();
@@ -26,39 +27,22 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         {!hideSplashScreen && (
-          <Stack.Screen
-            name="SplashScreen"
-            component={SplashScreen}
-          />
+          <Stack.Screen name="SplashScreen" component={SplashScreen} />
         )}
         {hideSplashScreen && (
           <>
-            <Stack.Screen
-              name="WelcomeScreen"
-              component={WelcomeScreen}
-            />
-            <Stack.Screen
-              name="CreateProfile"
-              component={CreateProfile}
-            />
-            <Stack.Screen
-              name="ExerciseMenu"
-              component={ExerciseMenu}
-            />
-            <Stack.Screen
-              name="ExerciseScreen"
-              component={ExerciseScreen}
-            />
+            <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+            <Stack.Screen name="CreateProfile" component={CreateProfile} />
+            <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
+            <Stack.Screen name="ExerciseMenu" component={ExerciseMenu} />
+            <Stack.Screen name="ExerciseScreen" component={ExerciseScreen} />
             <Stack.Screen
               name="ExerciseLeaderBoard"
               component={ExerciseLeaderBoard}
             />
-            <Stack.Screen
-              name="ExerciseSummary"
-              component={ExerciseSummary}
-            />
+            <Stack.Screen name="ExerciseSummary" component={ExerciseSummary} />
           </>
         )}
       </Stack.Navigator>
