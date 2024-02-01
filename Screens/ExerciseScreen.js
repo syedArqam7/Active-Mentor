@@ -49,11 +49,13 @@ const ExerciseScreen = ({ route }) => {
         JSON.stringify({...item}),
         parseInt(item.id),
       );
-    else 
-      startPortraitActivity(
-        JSON.stringify({...item}),
-        parseInt(item.id),
-      );
+    else {
+      try {
+          startPortraitActivity(JSON.stringify({...item}), parseInt(item.id));
+      } catch (error) {
+          console.error(`Failed to start portrait activity with ${cameraFacing} camera: ${error}`);
+      }
+    }
   }
 
   return (

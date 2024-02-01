@@ -2,6 +2,7 @@ package com.exercises.PersonExercises.highknee;
 
 import android.graphics.Canvas;
 import android.os.SystemClock;
+import android.util.Log;
 
 import com.exercises.base.exercise.AbstractPersonExercise;
 import com.exercises.base.exercise.ExerciseSettings;
@@ -73,37 +74,39 @@ public class HighKneeExercise extends AbstractPersonExercise {
 
         if (coolDownTime > SystemClock.elapsedRealtime()) return;
 
-        final int minAllowedAngle = -50;
+        final int minAllowedAngle = 20;
         final int maxAllowedAngle = 50;
 
-        leftKneeAngle = SMath.calculateAngle3Points(person.leftLeg.hip.getLocation(), person.leftLeg.knee.getLocation(), person.leftLeg.ankle.getLocation(), true);
-        rightKneeAngle = SMath.calculateAngle3Points(person.rightLeg.hip.getLocation(), person.rightLeg.knee.getLocation(), person.rightLeg.ankle.getLocation(), true);
+        leftKneeAngle = SMath.calculateAngle3Points(person.leftLeg.hip.getLocation(), person.leftLeg.knee.getLocation(), person.leftLeg.ankle.getLocation(), false);
+        rightKneeAngle = SMath.calculateAngle3Points(person.rightLeg.hip.getLocation(), person.rightLeg.knee.getLocation(), person.rightLeg.ankle.getLocation(), false);
 
         switch (knee) {
             //check for if the knee is Right,left or Any(at start of the exercise, where left or right knee could used)
             case RIGHT:
-                //check if the right knee above hipline, so it changes KNEE enum to left and increment count
-                if (aboveLine(person.rightLeg.knee.getLocation()) && (leftKneeAngle > minAllowedAngle && leftKneeAngle < maxAllowedAngle)) {
+                //check if the right knee above hipline and the leg is bent, so it changes KNEE enum to left and increment count
+                if (aboveLine(person.rightLeg.knee.getLocation()) && (rightKneeAngle > minAllowedAngle && rightKneeAngle < maxAllowedAngle) && !aboveLine(person.rightLeg.ankle.getLocation())) {
+                    Log.d("Right Knee", String.valueOf(rightKneeAngle));
                     knee = KNEE.LEFT;
                     incrementScore();
                     coolDownTime = SystemClock.elapsedRealtime() + COOLDOWNTIME;
                 }
                 break;
             case LEFT:
-                //check if the left knee above hipline, so it changes KNEE enum to Right and increment count
-                if (aboveLine(person.leftLeg.knee.getLocation()) && (rightKneeAngle > minAllowedAngle && rightKneeAngle < maxAllowedAngle)) {
+                //check if the left knee above hipline and the leg is bent, so it changes KNEE enum to Right and increment count
+                if (aboveLine(person.leftLeg.knee.getLocation()) && (leftKneeAngle > minAllowedAngle && leftKneeAngle < maxAllowedAngle) && !aboveLine(person.leftLeg.ankle.getLocation())) {
+                    Log.d("Left Knee", String.valueOf(leftKneeAngle));
                     knee = KNEE.RIGHT;
                     incrementScore();
                     coolDownTime = SystemClock.elapsedRealtime() + COOLDOWNTIME;
                 }
                 break;
             case ANY:
-                //used at the start of the exercise, Whenever any(left or Right) KNEE is higher than the hipline so it check if the Right/left knee is higher it changes enum to Left/Right and increment count.
-                if (aboveLine(person.rightLeg.knee.getLocation()) && (leftKneeAngle > minAllowedAngle && leftKneeAngle < maxAllowedAngle)) {
+                //used at the start of the exercise, Whenever any(left or Right) KNEE is higher than the hipline and the leg is bent, it checks if the Right/left knee is higher it changes enum to Left/Right and increment count.
+                if (aboveLine(person.rightLeg.knee.getLocation()) && (rightKneeAngle > minAllowedAngle && rightKneeAngle < maxAllowedAngle)) {
                     knee = KNEE.LEFT;
                     incrementScore();
                     coolDownTime = SystemClock.elapsedRealtime() + COOLDOWNTIME;
-                } else if (aboveLine(person.leftLeg.knee.getLocation()) && (rightKneeAngle > minAllowedAngle && rightKneeAngle < maxAllowedAngle)) {
+                } else if (aboveLine(person.leftLeg.knee.getLocation()) && (leftKneeAngle > minAllowedAngle && leftKneeAngle < maxAllowedAngle)) {
                     knee = KNEE.RIGHT;
                     incrementScore();
                     coolDownTime = SystemClock.elapsedRealtime() + COOLDOWNTIME;
