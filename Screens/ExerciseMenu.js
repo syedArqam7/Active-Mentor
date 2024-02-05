@@ -36,13 +36,13 @@ const ExerciseMenu = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.menuTitle}>Exercises</Text>
-        <Image style={styles.logo} source={require('../assets/orangeLogo.png')} />
+        <Image style={styles.logo} source={require('../assets/logo2.png')} />
       </View>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.tabsScrollContainer}>
-        <View style={styles.tabsContainer}>
+        <View style={styles.exerciseContainer}>
           {[
             'Jumping Jacks',
             'High Knees',
@@ -194,9 +194,8 @@ const styles = StyleSheet.create({
   menuTitle: {
     color: '#fff',
     fontSize: 30,
-    fontWeight: 'bold',
-    // textAlign: 'left',
     marginLeft: 20,
+    fontFamily: 'Poppins-Bold',
   },
   tabsScrollContainer: {
     height: 130, // Adjust this height as needed
@@ -213,6 +212,7 @@ const styles = StyleSheet.create({
   tabText: {
     color: '#fff',
     fontSize: 16,
+    fontFamily: 'Poppins-Regular',
   },
   activeTabText: {
     color: Color.colorLime,
@@ -224,6 +224,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
+    paddingHorizontal: 10,
+  },
+  exerciseContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // paddingVertical: 10,
     paddingHorizontal: 10,
   },
   tab: {

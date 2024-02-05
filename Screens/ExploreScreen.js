@@ -16,6 +16,10 @@ const ExploreScreen = () => {
   const [score, setScore] = useState(50); // [0 - 100
   const navigation = useNavigation();
 
+  const handleBackPress = () => {
+    navigation.navigate('ExerciseMenu');
+  };
+
   const handleContinue = () => {
     navigation.navigate('ExerciseScreen', {selectedExercise});
   };
@@ -114,17 +118,20 @@ const ExploreScreen = () => {
         </View>
 
         <View style={styles.featureCard}>
-          <Image
-            source={require('../assets/exercises/jumping_jack.png')}
-            style={styles.featureImage}
-          />
-          <Text style={styles.featureText}>Hello</Text>
+          <TouchableOpacity onPress={handleBackPress}>
+            <Image
+              source={require('../assets/exercise1.png')}
+              style={styles.featureImage}
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.featureCard}>
-          <Image
-            source={require('../assets/exercises/jumping_jack.png')}
-            style={styles.featureImage}
-          />
+          <TouchableOpacity onPress={handleContinue}>
+            <Image
+              source={require('../assets/leaderboard.png')}
+              style={styles.featureImage}
+            />
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
@@ -189,7 +196,7 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 10,
   },
-  featureText:{
+  featureText: {
     position: 'absolute',
     bottom: 20, // Adjust the distance from the bottom as needed
     left: 5, // Adjust the distance from the left as needed
@@ -199,8 +206,8 @@ const styles = StyleSheet.create({
   },
 
   highlightedText: {
-    fontWeight: 'bold',
-    color: Color.colorOrange,
+    color: '#EC9F05',
+    fontFamily: 'Poppins-Bold',
   },
   logo: {
     width: 50,
@@ -210,10 +217,11 @@ const styles = StyleSheet.create({
   },
   menuTitle: {
     color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontSize: 24,
+    // fontWeight: 'bold',
     // textAlign: 'left',
     marginLeft: 20,
+    fontFamily: 'Poppins-Regular',
   },
   tabsScrollContainer: {
     height: 130, // Adjust this height as needed
@@ -263,7 +271,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   continueButton: {
-    backgroundColor: Color.colorGreen,
+    backgroundColor: '#EC9F05',
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 20,
