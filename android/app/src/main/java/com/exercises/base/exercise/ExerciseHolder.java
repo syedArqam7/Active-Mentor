@@ -15,7 +15,7 @@ package com.exercises.base.exercise;
 // import com.exercises.BallPersonExercises.vcuts.VcutsExercise;
 import com.exercises.PersonExercises.bridge.BridgeExercise;
 // import com.exercises.PersonExercises.bulgarianSplitSquat.BulgarianSplitSquat;
-// import com.exercises.PersonExercises.burpees.BurpeesExercise;
+import com.exercises.PersonExercises.burpees.BurpeesExercise;
 import com.exercises.PersonExercises.deadlift.DeadliftExercise;
 // import com.exercises.PersonExercises.frameGame.FrameGameExercise;
 import com.exercises.PersonExercises.growingGrass.GrowingGrassExercise;
@@ -109,8 +109,8 @@ public class ExerciseHolder {
             //     return new PersonPoseExercise(exerciseSettings);
             // case 27:
             //     return new RollStopsExercise(exerciseSettings);
-            // case 28:
-            //     return new BurpeesExercise(exerciseSettings);
+            case 28:
+                return new BurpeesExercise(exerciseSettings);
             // case 29:
             //     return new SidePlankDipsExercise(exerciseSettings);
             // case 30:

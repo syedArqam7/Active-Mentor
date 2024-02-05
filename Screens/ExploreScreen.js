@@ -53,7 +53,10 @@ const ExploreScreen = () => {
       title: 'Squats',
       imageSource: require('../assets/exercises/jumping_jack.png'),
     },
-    // Add more exercises as needed
+    {
+      title: 'Burpees',
+      imageSource: require('../assets/exercises/jumping_jack.png'),
+    }
   ];
 
   return (
@@ -76,9 +79,13 @@ const ExploreScreen = () => {
             style={styles.tabsScrollContainer}>
             {exercises.map((exercise, index) => (
               <View key={index} style={styles.imageWithTextContainer}>
-                <Image source={exercise.imageSource} style={styles.image} />
-                <View style={styles.overlay} />
-                <Text style={styles.imageText}>{exercise.title}</Text>
+                <TouchableOpacity
+                  onPress={() => handleExerciseTabClick(exercise.title)}
+                >
+                  <Image source={exercise.imageSource} style={styles.image} />
+                  <View style={styles.overlay} />
+                  <Text style={styles.imageText}>{exercise.title}</Text>
+                </TouchableOpacity>
               </View>
             ))}
           </ScrollView>
