@@ -14,7 +14,10 @@ const WelcomeScreen = () => {
   const navigation = useNavigation();
 
   const handleGetStarted = () => {
-    navigation.navigate('CreateProfile');
+    navigation.navigate('SignUpScreen');
+  };
+  const handleLogin = () => {
+    navigation.navigate('LoginScreen');
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -25,22 +28,13 @@ const WelcomeScreen = () => {
         <Image
           style={styles.logo}
           resizeMode="cover"
-          source={require('../assets/yellow.png')}
+          source={require('../assets/logo2.png')}
         />
-        <Text style={styles.subtitle}>
-          Great Health Is The Key Of Great Success
-        </Text>
         <TouchableOpacity style={styles.button} onPress={handleGetStarted}>
           <Text style={styles.buttonText}>GET STARTED</Text>
         </TouchableOpacity>
-        <Text style={styles.loginText}>
-          Already have an account?{' '}
-          <Text style={{color: Color.colorOrange}}>Log in</Text>
-        </Text>
       </View>
-      <View style={styles.footer}>
-        {/* Placeholder for any footer content */}
-      </View>
+      <View style={styles.footer}></View>
     </SafeAreaView>
   );
 };
@@ -73,7 +67,6 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#EC9F05',
-    // backgroundColor: Color.colorOrange,
     paddingHorizontal: 60,
     paddingVertical: 10,
     borderRadius: 25,
@@ -81,8 +74,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontWeight: 'bold',
     fontSize: 18,
+    fontFamily: 'Poppins-Bold',
   },
   loginText: {
     color: 'gray',
@@ -90,11 +83,13 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
+    justifyContent: 'flex-end', // Align items at the bottom of the screen
+    paddingBottom: 20, // Optional: Add padding to the bottom to separate from the edge
   },
   logo: {
-    width: 200,
+    width: 220,
     height: 200,
-    marginBottom: 30,
+    marginBottom: 50,
   },
 });
 

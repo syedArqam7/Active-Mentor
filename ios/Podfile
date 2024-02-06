@@ -81,6 +81,10 @@ target 'NATIVE_AI' do
   pod 'TensorFlowLiteSwift', '~> 0.0.1-nightly', :subspecs => ['CoreML']
   pod 'TensorFlowLiteSwift', '~> 0.0.1-nightly', :subspecs => ['Metal']
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   target 'NATIVE_AITests' do
     inherit! :complete
     # Pods for testing

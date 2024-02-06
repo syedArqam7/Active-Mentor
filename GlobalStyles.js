@@ -34,13 +34,13 @@ export const Color = {
   colorGray_400: 'rgba(0, 0, 0, 0.04)',
   fillColorLightTertiary: 'rgba(118, 118, 128, 0.12)',
   separatorColorLightWithTransparency: 'rgba(60, 60, 67, 0.36)',
-  colorLime: '#F37125',
+  colorLime: '#EC9F05',
   // colorLime: '#4fff03',
   colorBlack: '#000',
   colorWhite: '#fff',
-  colorGreen: '#FF7729',
+  colorGreen: '#EC9F05',
   colorDarkolivegreen: '#133d01',
-  colorOrange: '#FF7729',
+  colorOrange: '#EC9F05',
 };
 
 /* Paddings */

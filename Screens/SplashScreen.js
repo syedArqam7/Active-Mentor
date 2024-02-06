@@ -8,7 +8,7 @@ const SplashScreen = () => {
       <Image
         style={styles.LogoStyle}
         resizeMode="cover"
-        source={require("../assets/splashLogo.png")}
+        source={require('../assets/logo2.png')}
       />
       <Text style={styles.yourWorkoutExpert}>Your Workout Expert</Text>
     </View>
@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     left: "8%",
     justifyContent: "center",
     position: "absolute",
-    width: "80%",
-    height: "30%",
+    width: 200,
+    height: 200,
     top: 250,
     alignItems: "center",
     position: "absolute",
