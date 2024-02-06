@@ -44,25 +44,27 @@ public class HighKneeExercise extends AbstractPersonExercise {
     @Override
     protected void drawExerciseDebug(Canvas canvas) {
         // uncomment when required or during debugging.
-//        drawTextDebug(canvas, "Score: " + score.getCount());
-//        drawTextDebug(canvas, "Knee:  " + knee);
+        drawTextDebug(canvas, "Score: " + score.getCount());
+        drawTextDebug(canvas, "Knee:  " + knee);
+       // drawTextLargeDebug(canvas, "Left: " + leftKneeAngle);
+        //drawTextLargeDebug(canvas, "Right: " + rightKneeAngle);
 //        drawTextDebug(canvas, "lextended:  " + person.leftArm.sidewaysExtended() + " lcosine:" + String.format("%.2f", person.leftArm.getSideWaysExtendedCosine()) +
 //                "rextended:  " + person.rightArm.sidewaysExtended() + " rcosine:" + String.format("%.2f", person.rightArm.getSideWaysExtendedCosine()));
 //
-//        canvas.drawLine(0, (float) hipLine * canvas.getHeight(), canvas.getWidth(), (float) hipLine * canvas.getHeight(), new JOGOPaint().blue().mediumStroke());
+        canvas.drawLine(0, (float) hipLine * canvas.getHeight(), canvas.getWidth(), (float) hipLine * canvas.getHeight(), new JOGOPaint().blue().mediumStroke());
 //
 ////         exercise gears
-//        if (Gear.iff("drawExtra")) drawExtraDebug(canvas);
+        if (Gear.iff("drawExtra")) drawExtraDebug(canvas);
 
     }
 
     public void drawExtraDebug(Canvas canvas) {
         drawTextDebug(canvas, "ExtraDebug:  ");
         drawTextDebug(canvas, "Hipline parameter:  " + HIPLINEPARAMETER);
-        drawTextDebug(canvas, "Left: " + leftKneeAngle);
         drawTextLargeDebug(canvas, "Left: " + leftKneeAngle);
         drawTextLargeDebug(canvas, "Right: " + rightKneeAngle);
-
+        drawTextLargeDebug(canvas, " Left Ankle: " + aboveLine(person.leftLeg.ankle.getDetectedLocation()));
+        drawTextLargeDebug(canvas, " Right Ankle: " + aboveLine(person.rightLeg.ankle.getDetectedLocation()));
     }
 
     private boolean aboveLine(DetectionLocation detectionLocation) {
@@ -74,8 +76,8 @@ public class HighKneeExercise extends AbstractPersonExercise {
 
         if (coolDownTime > SystemClock.elapsedRealtime()) return;
 
-        final int minAllowedAngle = 20;
-        final int maxAllowedAngle = 50;
+        final int minAllowedAngle = -10;
+        final int maxAllowedAngle = 90;
 
         leftKneeAngle = SMath.calculateAngle3Points(person.leftLeg.hip.getLocation(), person.leftLeg.knee.getLocation(), person.leftLeg.ankle.getLocation(), false);
         rightKneeAngle = SMath.calculateAngle3Points(person.rightLeg.hip.getLocation(), person.rightLeg.knee.getLocation(), person.rightLeg.ankle.getLocation(), false);
@@ -85,7 +87,6 @@ public class HighKneeExercise extends AbstractPersonExercise {
             case RIGHT:
                 //check if the right knee above hipline and the leg is bent, so it changes KNEE enum to left and increment count
                 if (aboveLine(person.rightLeg.knee.getLocation()) && (rightKneeAngle > minAllowedAngle && rightKneeAngle < maxAllowedAngle) && !aboveLine(person.rightLeg.ankle.getLocation())) {
-                    Log.d("Right Knee", String.valueOf(rightKneeAngle));
                     knee = KNEE.LEFT;
                     incrementScore();
                     coolDownTime = SystemClock.elapsedRealtime() + COOLDOWNTIME;
@@ -94,7 +95,6 @@ public class HighKneeExercise extends AbstractPersonExercise {
             case LEFT:
                 //check if the left knee above hipline and the leg is bent, so it changes KNEE enum to Right and increment count
                 if (aboveLine(person.leftLeg.knee.getLocation()) && (leftKneeAngle > minAllowedAngle && leftKneeAngle < maxAllowedAngle) && !aboveLine(person.leftLeg.ankle.getLocation())) {
-                    Log.d("Left Knee", String.valueOf(leftKneeAngle));
                     knee = KNEE.RIGHT;
                     incrementScore();
                     coolDownTime = SystemClock.elapsedRealtime() + COOLDOWNTIME;
