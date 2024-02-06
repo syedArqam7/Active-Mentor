@@ -35,7 +35,7 @@ const ExerciseScreen = ({ route }) => {
   const toggleFrontCameraSwitch = () => setFrontCameraEnabled(previousState => !previousState);
 
   const handleBackPress = () => {
-    navigation.navigate('ExerciseMenu');
+    navigation.navigate('ExploreScreen');
   }
 
   const handleStartNow = () => {

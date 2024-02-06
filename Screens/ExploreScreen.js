@@ -56,7 +56,19 @@ const ExploreScreen = () => {
     {
       title: 'Burpees',
       imageSource: require('../assets/exercises/jumping_jack.png'),
-    }
+    },
+    {
+      title: 'Knee Pushup',
+      imageSource: require('../assets/exercises/jumping_jack.png'),
+    },
+    {
+      title: 'Ladder Run',
+      imageSource: require('../assets/exercises/jumping_jack.png'),
+    },
+    {
+      title: 'Side Plank',
+      imageSource: require('../assets/exercises/jumping_jack.png'),
+    },
   ];
 
   return (
