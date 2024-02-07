@@ -76,8 +76,8 @@ public class HighKneeExercise extends AbstractPersonExercise {
 
         if (coolDownTime > SystemClock.elapsedRealtime()) return;
 
-        final int minAllowedAngle = -10;
-        final int maxAllowedAngle = 90;
+        final int minAllowedAngle = -50;
+        final int maxAllowedAngle = 50;
 
         leftKneeAngle = SMath.calculateAngle3Points(person.leftLeg.hip.getLocation(), person.leftLeg.knee.getLocation(), person.leftLeg.ankle.getLocation(), false);
         rightKneeAngle = SMath.calculateAngle3Points(person.rightLeg.hip.getLocation(), person.rightLeg.knee.getLocation(), person.rightLeg.ankle.getLocation(), false);
@@ -86,7 +86,7 @@ public class HighKneeExercise extends AbstractPersonExercise {
             //check for if the knee is Right,left or Any(at start of the exercise, where left or right knee could used)
             case RIGHT:
                 //check if the right knee above hipline and the leg is bent, so it changes KNEE enum to left and increment count
-                if (aboveLine(person.rightLeg.knee.getLocation()) && (rightKneeAngle > minAllowedAngle && rightKneeAngle < maxAllowedAngle) && !aboveLine(person.rightLeg.ankle.getLocation())) {
+                if (aboveLine(person.rightLeg.knee.getLocation()) && (rightKneeAngle > minAllowedAngle && rightKneeAngle < maxAllowedAngle)) {
                     knee = KNEE.LEFT;
                     incrementScore();
                     coolDownTime = SystemClock.elapsedRealtime() + COOLDOWNTIME;
@@ -94,7 +94,7 @@ public class HighKneeExercise extends AbstractPersonExercise {
                 break;
             case LEFT:
                 //check if the left knee above hipline and the leg is bent, so it changes KNEE enum to Right and increment count
-                if (aboveLine(person.leftLeg.knee.getLocation()) && (leftKneeAngle > minAllowedAngle && leftKneeAngle < maxAllowedAngle) && !aboveLine(person.leftLeg.ankle.getLocation())) {
+                if (aboveLine(person.leftLeg.knee.getLocation()) && (leftKneeAngle > minAllowedAngle && leftKneeAngle < maxAllowedAngle)) {
                     knee = KNEE.RIGHT;
                     incrementScore();
                     coolDownTime = SystemClock.elapsedRealtime() + COOLDOWNTIME;
