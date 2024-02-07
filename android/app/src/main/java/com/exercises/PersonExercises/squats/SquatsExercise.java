@@ -57,13 +57,13 @@ public class SquatsExercise extends AbstractPersonExercise {
     protected void drawExerciseDebug(Canvas canvas) {
 // uncomment when required or during debugging.
 //        //canvas.drawText("Score: " + score.getCount(), 200, getNewDrawDebugHeight(), new JOGOPaint().jogoYellow().large());
-//        canvas.drawLine(0, (float) decisionLineHigh * canvas.getHeight(), canvas.getWidth(), (float) decisionLineHigh * canvas.getHeight(), new JOGOPaint().blue().mediumStroke());
-//        canvas.drawLine(0, (float) decisionLineLow * canvas.getHeight(), canvas.getWidth(), (float) decisionLineLow * canvas.getHeight(), new JOGOPaint().green().mediumStroke());
-//
-//        canvas.drawLine(0, (float) kneeLocationY * canvas.getHeight(), canvas.getWidth(), (float) kneeLocationY * canvas.getHeight(), new JOGOPaint().yellow().mediumStroke());
-//        canvas.drawLine(0, (float) hipLocationY * canvas.getHeight(), canvas.getWidth(), (float) hipLocationY * canvas.getHeight(), new JOGOPaint().red().mediumStroke());
-//        drawTextLargeDebug(canvas, "Perform " + motion);
-//        drawTextLargeDebug(canvas, "Ratio " + scaleRatio);
+       canvas.drawLine(0, (float) decisionLineHigh * canvas.getHeight(), canvas.getWidth(), (float) decisionLineHigh * canvas.getHeight(), new JOGOPaint().blue().mediumStroke());
+       canvas.drawLine(0, (float) decisionLineLow * canvas.getHeight(), canvas.getWidth(), (float) decisionLineLow * canvas.getHeight(), new JOGOPaint().green().mediumStroke());
+
+       canvas.drawLine(0, (float) kneeLocationY * canvas.getHeight(), canvas.getWidth(), (float) kneeLocationY * canvas.getHeight(), new JOGOPaint().yellow().mediumStroke());
+       canvas.drawLine(0, (float) hipLocationY * canvas.getHeight(), canvas.getWidth(), (float) hipLocationY * canvas.getHeight(), new JOGOPaint().red().mediumStroke());
+       drawTextLargeDebug(canvas, "Perform " + motion);
+       drawTextLargeDebug(canvas, "Ratio " + scaleRatio);
     }
 
     // Calculate distance between Hip and Knee during calibration
@@ -99,7 +99,7 @@ public class SquatsExercise extends AbstractPersonExercise {
 
     protected void processExercise(InfoBlob infoBlob) {
         updateScaleRatio();
-        hipLocationY = Math.max(person.leftLeg.hip.getY(), person.rightLeg.hip.getY());
+        hipLocationY = Math.min(person.leftLeg.hip.getY(), person.rightLeg.hip.getY());
         kneeLocationY = Math.max(person.leftLeg.knee.getY(), person.rightLeg.knee.getY());
         decisionLineLow = getDecisionLineLow();
         decisionLineHigh = getDecisionLineHigh();
@@ -118,6 +118,7 @@ public class SquatsExercise extends AbstractPersonExercise {
                 if (hipLocationY <= (decisionLineHigh) && bodyUpright.match()) {
                     motion = MOTION.DOWN;
                     lastUpFrame = infoBlob.getFrameID();
+                    incrementScore();
                 }
                 break;
             default:

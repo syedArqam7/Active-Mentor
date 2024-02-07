@@ -470,7 +470,7 @@ export const AI_Exercises = [
   {
     countDownMiliSeconds: 30000,
     description: 'Do Burpees',
-    scoreType: scoreTypes.COUNTDOWN,
+    scoreType: scoreTypes.NREPETITIONS,
     id: 28,
     score: 10,
     selectedCameraFacing: 'FRONT',
