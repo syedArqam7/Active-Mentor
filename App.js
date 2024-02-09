@@ -16,6 +16,7 @@ import LoginScreen from './Screens/Login';
 
 const Stack = createNativeStackNavigator();
 
+
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = useState(false); // Initially false to show the splash screen
 

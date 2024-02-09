@@ -10,7 +10,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {BottomButton, Color} from '../GlobalStyles';
 
-const ExerciseMenuBackup = () => {
+const ExerciseMenu = () => {
   const [isHistoryTab, setHistoryTab] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState('Jumping Jacks'); // ['Jumping Jacks', 'High Knees', 'Push Ups', 'Squats', 'Lunges', 'All'
   const [score, setScore] = useState(50); // [0 - 100
@@ -32,112 +32,47 @@ const ExerciseMenuBackup = () => {
     setSelectedExercise(exercise);
   };
 
+//   <View style={styles.progressBarContainer}>
+//     <View
+//       style={[
+//         styles.progressBarFill,
+//         {width: `${parseInt(exercise.score, 10)}%`},
+//       ]}
+//     />
+//   </View>;
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.menuTitle}>Exercises</Text>
-        {/* <Image style={styles.logo} source={require('../assets/am-logo.png')} /> */}
+        <Image style={styles.logo} source={require('../assets/logo2.png')} />
       </View>
-      {/* Exercise Tabs */}
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.tabsScrollContainer}>
-        <View style={styles.tabsContainer}>
-          <TouchableOpacity
-            style={[
-              styles.tab,
-              selectedExercise === 'Jumping Jacks' ? styles.activeTab : null,
-            ]}
-            onPress={() => handleExerciseTabClick('Jumping Jacks')}>
-            <Text
-              style={[
-                styles.tab,
-                selectedExercise === 'Jumping Jacks'
-                  ? {color: Color.colorGreen}
-                  : null,
-              ]}>
-              Jumping Jacks
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.tab,
-              selectedExercise === 'High Knees' ? styles.activeTab : null,
-            ]}
-            onPress={() => handleExerciseTabClick('High Knees')}>
-            <Text
-              style={[
-                styles.tab,
-                selectedExercise === 'High Knees'
-                  ? {color: Color.colorGreen}
-                  : null,
-              ]}>
-              High Knees
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.tab,
-              selectedExercise === 'Push Ups' ? styles.activeTab : null,
-            ]}
-            onPress={() => handleExerciseTabClick('Push Ups')}>
-            <Text
-              style={[
-                styles.tab,
-                selectedExercise === 'Push Ups'
-                  ? {color: Color.colorGreen}
-                  : null,
-              ]}>
-              Push Ups
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.tab,
-              selectedExercise === 'Squats' ? styles.activeTab : null,
-            ]}
-            onPress={() => handleExerciseTabClick('Squats')}>
-            <Text
-              style={[
-                styles.tab,
-                selectedExercise === 'Squats'
-                  ? {color: Color.colorGreen}
-                  : null,
-              ]}>
-              Squats
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.tab,
-              selectedExercise === 'Lunges' ? styles.activeTab : null,
-            ]}
-            onPress={() => handleExerciseTabClick('Lunges')}>
-            <Text
-              style={[
-                styles.tab,
-                selectedExercise === 'Lunges'
-                  ? {color: Color.colorGreen}
-                  : null,
-              ]}>
-              Lunges
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.tab,
-              selectedExercise === 'All' ? styles.activeTab : null,
-            ]}
-            onPress={() => handleExerciseTabClick('All')}>
-            <Text
-              style={[
-                styles.tab,
-                selectedExercise === 'All' ? {color: Color.colorGreen} : null,
-              ]}>
-              All
-            </Text>
-          </TouchableOpacity>
+        <View style={styles.exerciseContainer}>
+          {[
+            'Jumping Jacks',
+            'High Knees',
+            'Push Ups',
+            'Squats',
+            'Lunges',
+            'All',
+          ].map((exercise) => (
+            <TouchableOpacity
+              key={exercise}
+              style={styles.tabButton}
+              onPress={() => handleExerciseTabClick(exercise)}>
+              <Text
+                style={[
+                  styles.tabText,
+                  selectedExercise === exercise ? styles.activeTabText : null,
+                ]}>
+                {exercise}
+              </Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </ScrollView>
 
@@ -251,30 +186,59 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
   },
   header: {
-    flex: 1,
+    flex: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     // marginTop: 30,
     marginVertical: 20,
+    // height: 100,
   },
   logo: {
-    width: '10%',
-    height: '30%',
+    width: 50,
+    height: 45,
+    marginVertical: 25,
+    marginRight: 25,
   },
   menuTitle: {
     color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'left',
+    fontSize: 30,
     marginLeft: 20,
+    fontFamily: 'Poppins-Bold',
   },
   tabsScrollContainer: {
-    flexGrow: 0, // Add this to prevent ScrollView from filling the whole screen
+    height: 130, // Adjust this height as needed
+    marginBottom: 10,
+    marginTop: -20,
   },
+
+  tabButton: {
+    // Add styles specific to TouchableOpacity here
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    marginHorizontal: 5,
+  },
+  tabText: {
+    color: '#fff',
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
+  },
+  activeTabText: {
+    color: Color.colorLime,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
   tabsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
+    paddingHorizontal: 10,
+  },
+  exerciseContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // paddingVertical: 10,
     paddingHorizontal: 10,
   },
   tab: {
@@ -321,7 +285,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   score: {
-    color: 'limegreen',
+    color: 'white',
     fontSize: 48,
     fontWeight: 'bold',
   },
@@ -452,4 +416,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ExerciseMenuBackup;
+export default ExerciseMenu;

@@ -13,40 +13,40 @@ import {Color} from '../GlobalStyles';
 
 const exercises = [
   {
-    name: 'Squats',
-    mins: '15',
-    score: '76',
-    image: require('../assets/exercises/squat.jpg'),
-  },
-  {
     name: 'Jumping Jacks',
     mins: '10',
     score: '48',
-    image: require('../assets/exercises/jumping.jpeg'),
+    image: require('../assets/exercises/jumping_jack.png'),
   },
   {
     name: 'High Knees',
     mins: '25',
     score: '54',
-    image: require('../assets/exercises/highknee.jpg'),
+    image: require('../assets/exercises/high_knees.png'),
   },
   {
     name: 'Push Ups',
     mins: '15',
     score: '76',
-    image: require('../assets/exercises/push_ups.jpg'),
+    image: require('../assets/exercises/jumping_jack.png'),
+  },
+  {
+    name: 'Squats',
+    mins: '15',
+    score: '76',
+    image: require('../assets/exercises/jumping_jack.png'),
   },
   {
     name: 'Lunges',
     mins: '15',
     score: '76',
-    image: require('../assets/exercises/lunges.jpg'),
+    image: require('../assets/exercises/jumping_jack.png'),
   },
   {
     name: 'All',
     mins: '15',
     score: '76',
-    image: require('../assets/exercises/exercise.jpg'),
+    image: require('../assets/exercises/jumping_jack.png'),
   },
   // Add other exercises here
 ];
@@ -55,14 +55,17 @@ const ExerciseMenu = () => {
   const navigation = useNavigation();
 
   const handleContinue = (exercise) => {
-    navigation.navigate('ExerciseScreen', {selectedExercise: exercise});
+    navigation.navigate('ExerciseScreen', {exercise});
   };
 
   const renderExerciseCards = () => {
     return exercises.map((exercise, index) => (
       <View key={index} style={styles.cardContainer}>
+        {/* <TouchableOpacity onPress={() => handleContinue(exercise.name)}> */}
         <ImageBackground style={styles.cardImage} source={exercise.image}>
           <View style={styles.overlay}>
+            <Text style={styles.cardTitle}>{exercise.name}</Text>
+            <Text style={styles.cardSubtitle}>{exercise.mins} mins more</Text>
             <View style={styles.progressBarContainer}>
               <View
                 style={[
@@ -71,30 +74,15 @@ const ExerciseMenu = () => {
                 ]}
               />
             </View>
-            <View style={styles.cardContent}>
-              <View style={styles.cardTopRow}>
-                <View style={styles.cardTopRight}>
-                  <Text style={styles.cardTitle}>{exercise.name}</Text>
-                </View>
-                <View style={styles.cardTopLeft}>
-                  <Text style={styles.scoreText}>{exercise.score}</Text>
-                  <Text style={styles.scoreText1}> Points</Text>
-                </View>
-              </View>
-              <View style={styles.cardBottomRow}>
-                <Text style={styles.cardSubtitle}>
-                  {exercise.mins} mins more
-                </Text>
-                <TouchableOpacity
-                  style={styles.button}
-                  // onPress={() => handleContinue(exercise.name)}
-                  onPress={() => handleContinue(exercise)}>
-                  <Text style={styles.buttonText}>Continue</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
+            <Text style={styles.scoreText}>{exercise.score} Points</Text>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => handleContinue(exercise.name)}>
+              <Text style={styles.buttonText}>Continue</Text>
+            </TouchableOpacity>
           </View>
         </ImageBackground>
+        {/* </TouchableOpacity> */}
       </View>
     ));
   };
@@ -127,6 +115,7 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
     fontSize: 28,
+    // fontWeight: 'bold',
     fontFamily: 'Poppins-Bold',
   },
   logo: {
@@ -143,75 +132,49 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     width: '100%',
+    // height: 200,
     justifyContent: 'flex-end',
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.55)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
     padding: 20,
+  },
+  cardTitle: {
+    color: '#fff',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  cardSubtitle: {
+    color: '#fff',
+    fontSize: 16,
+    marginBottom: 5,
   },
   progressBarContainer: {
     height: 10,
     backgroundColor: '#111',
     borderRadius: 10,
     overflow: 'hidden',
-    marginBottom: 10,
+    marginBottom: 5,
   },
   progressBarFill: {
     height: '100%',
     backgroundColor: Color.colorOrange,
   },
-  cardContent: {},
-  cardTopRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 5,
-    alignItems: 'center',
-  },
-  cardTopLeft: {
-    flexDirection: 'column',
-  },
-  cardTopRight: {
-    flex: 1,
-  },
-  cardTitle: {
-    color: '#fff',
-    fontSize: 28,
-    marginBottom: 5,
-    width: '65%',
-    fontFamily: 'Poppins-Regular',
-  },
-  cardSubtitle: {
-    color: '#fff',
-    fontSize: 16,
-    fontFamily: 'Poppins-Regular',
-  },
   scoreText: {
     color: '#fff',
-    fontSize: 48,
+    fontSize: 16,
     fontWeight: 'bold',
-    textAlign: 'left',
-  },
-  scoreText1: {
-    color: '#fff',
-    fontSize: 14,
-    fontFamily: 'Poppins-Regular',
-    textAlign: 'center',
-    paddingBottom: 10,
-  },
-  cardBottomRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
   button: {
     backgroundColor: Color.colorGreen,
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    marginTop: 10,
     borderRadius: 5,
     alignItems: 'center',
   },
   buttonText: {
-    color: '#fff',
+    color: '#111',
     fontFamily: 'Poppins-Bold',
   },
 });

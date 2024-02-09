@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "0": "0.0.0",
+    "@react-navigation/drawer": "^5.12.9",
     "@react-navigation/native": "^5.9.8",
     "@react-navigation/native-stack": "^5.0.4",
     "react": "17.0.2",
