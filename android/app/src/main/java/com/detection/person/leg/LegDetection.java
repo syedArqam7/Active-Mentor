@@ -6,7 +6,7 @@ import com.detection.person.Bone;
 import com.detection.person.PersonDetection;
 import com.location.DetectionLocation;
 import com.models.ModelManager;
-import com.models.OldPoseNet;
+import com.models.PoseNet;
 import com.utils.InfoBlob;
 import com.utils.SMath;
 
@@ -30,29 +30,29 @@ public class LegDetection extends BodyPartDetection {
 
         switch (orientation) {
             case LEFT:
-                hip = new BodyElement(OldPoseNet.BODYPART.LEFT_HIP.label, modeltype, exerciseLead);
-                knee = new BodyElement(OldPoseNet.BODYPART.LEFT_KNEE.label, modeltype, exerciseLead);
-                ankle = new BodyElement(OldPoseNet.BODYPART.LEFT_ANKLE.label, modeltype, exerciseLead);
+                hip = new BodyElement(PoseNet.BODYPART.LEFT_HIP.label, modeltype, exerciseLead);
+                knee = new BodyElement(PoseNet.BODYPART.LEFT_KNEE.label, modeltype, exerciseLead);
+                ankle = new BodyElement(PoseNet.BODYPART.LEFT_ANKLE.label, modeltype, exerciseLead);
 
-                if (modeltype == ModelManager.MODELTYPE.OLD_POSENET) {
+                if (modeltype == ModelManager.MODELTYPE.POSENET) {
                     heel = ankle;
                     index = ankle;
                 } else {
-                    heel = new BodyElement(OldPoseNet.BODYPART.LEFT_HEEL.label, modeltype, exerciseLead);
-                    index = new BodyElement(OldPoseNet.BODYPART.LEFT_FOOT_INDEX.label, modeltype, exerciseLead);
+                    heel = new BodyElement(PoseNet.BODYPART.LEFT_HEEL.label, modeltype, exerciseLead);
+                    index = new BodyElement(PoseNet.BODYPART.LEFT_FOOT_INDEX.label, modeltype, exerciseLead);
                 }
                 break;
             case RIGHT:
-                hip = new BodyElement(OldPoseNet.BODYPART.RIGHT_HIP.label, modeltype, exerciseLead);
-                knee = new BodyElement(OldPoseNet.BODYPART.RIGHT_KNEE.label, modeltype, exerciseLead);
-                ankle = new BodyElement(OldPoseNet.BODYPART.RIGHT_ANKLE.label, modeltype, exerciseLead);
+                hip = new BodyElement(PoseNet.BODYPART.RIGHT_HIP.label, modeltype, exerciseLead);
+                knee = new BodyElement(PoseNet.BODYPART.RIGHT_KNEE.label, modeltype, exerciseLead);
+                ankle = new BodyElement(PoseNet.BODYPART.RIGHT_ANKLE.label, modeltype, exerciseLead);
 
                 if (modeltype == ModelManager.MODELTYPE.OLD_POSENET) {
                     heel = ankle;
                     index = ankle;
                 } else {
-                    heel = new BodyElement(OldPoseNet.BODYPART.RIGHT_HEEL.label, modeltype, exerciseLead);
-                    index = new BodyElement(OldPoseNet.BODYPART.RIGHT_FOOT_INDEX.label, modeltype, exerciseLead);
+                    heel = new BodyElement(PoseNet.BODYPART.RIGHT_HEEL.label, modeltype, exerciseLead);
+                    index = new BodyElement(PoseNet.BODYPART.RIGHT_FOOT_INDEX.label, modeltype, exerciseLead);
                 }
                 break;
             default:

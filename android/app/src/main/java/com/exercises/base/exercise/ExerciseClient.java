@@ -57,6 +57,7 @@ public class ExerciseClient implements CanDraw {
         // Don't want to re-animate this during restart.
         if (!eActivity.getIntent().getExtras().getBoolean("restart"))
             new LottieRender(R.raw.logo2).background(Color.BLACK).play();
+            new LottieRender(R.raw.active_promo).background(Color.BLACK).play();
     }
 
     public void start() {

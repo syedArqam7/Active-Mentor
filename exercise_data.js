@@ -319,7 +319,7 @@ export const AI_Exercises = [
     scoreType: scoreTypes.NREPETITIONS,
     exerciseVariation: 0,
     id: 10,
-    score: 5,
+    score: 10,
     selectedCameraFacing: 'FRONT',
     title: 'Push Ups',
     useQuestions: false,
@@ -470,7 +470,7 @@ export const AI_Exercises = [
   {
     countDownMiliSeconds: 30000,
     description: 'Do Burpees',
-    scoreType: scoreTypes.COUNTDOWN,
+    scoreType: scoreTypes.NREPETITIONS,
     id: 28,
     score: 10,
     selectedCameraFacing: 'FRONT',
