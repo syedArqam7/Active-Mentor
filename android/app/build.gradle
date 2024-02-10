@@ -275,8 +275,8 @@ dependencies {
     implementation 'androidx.camera:camera-lifecycle:1.0.0-beta05'
     implementation 'androidx.camera:camera-view:1.0.0-alpha12'
 
-    implementation 'com.google.mlkit:pose-detection:17.0.1-beta4'
-    implementation 'com.google.mlkit:pose-detection-accurate:17.0.1-beta4'
+    implementation 'com.google.mlkit:pose-detection:18.0.0-beta3'
+    implementation 'com.google.mlkit:pose-detection-accurate:18.0.0-beta3'
 
 
     implementation 'io.sentry:sentry-android:5.0.1'
