@@ -2,6 +2,7 @@ package com.render.lottie;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.graphics.Color;
 
 import com.exercises.base.exercise.ExerciseActivity;
 import com.jogo.R;
@@ -13,8 +14,10 @@ public class LottieCountDown extends LottieBase<LottieCountDown> {
     LottieRender postLoad;
 
     public LottieCountDown() {
-        super(0, ExerciseActivity.render.getViewBinding().lavCountDown);
+        // super(0, ExerciseActivity.render.getViewBinding().lavCountDown);
+        super(R.raw.active_countdown);
         ephemeral(true);
+        background(Color.BLACK);
 
         //TODO: this is not really clean code
         onStart(this::startSound);
@@ -22,16 +25,16 @@ public class LottieCountDown extends LottieBase<LottieCountDown> {
         preload = createPreload();
         preload.onEnd(super::play);
         //onstart is not called, because the view is hidden
-        preload.onEnd(this::showContainer);
+        // preload.onEnd(this::showContainer);
 
-        onEnd(this::hideContainer);
+        // onEnd(this::hideContainer);
 
-        postLoad = createPostLoad();
-        postLoad.onEnd(this::showUI);
-        onEnd(postLoad::play);
+        // postLoad = createPostLoad();
+        // postLoad.onEnd(this::showUI);
+        // onEnd(postLoad::play);
 
-        maxFrame(193);
-        setScaleType(ImageView.ScaleType.CENTER_CROP);
+        // maxFrame(193);
+        // setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 
     @Override
