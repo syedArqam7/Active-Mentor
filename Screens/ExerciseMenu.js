@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -53,6 +53,7 @@ const exercises = [
 
 const ExerciseMenu = () => {
   const navigation = useNavigation();
+  const [selectedExercise, setSelectedExercise] = useState('Jumping Jacks');
 
   const handleContinue = (exercise) => {
     navigation.navigate('ExerciseScreen', {selectedExercise: exercise});

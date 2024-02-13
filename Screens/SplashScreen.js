@@ -1,13 +1,13 @@
-import * as React from "react";
-import { Image, StyleSheet, View, Text } from "react-native";
-import { Border, Color, FontFamily } from "../GlobalStyles";
+import * as React from 'react';
+import {Image, StyleSheet, View, Text, Dimensions} from 'react-native';
+import {Color, FontFamily} from '../GlobalStyles';
 
 const SplashScreen = () => {
   return (
-    <View style={styles.SplashScreen}>
+    <View style={styles.container}>
       <Image
-        style={styles.LogoStyle}
-        resizeMode="cover"
+        style={styles.logo}
+        resizeMode="contain"
         source={require('../assets/logo2.png')}
       />
       <Text style={styles.yourWorkoutExpert}>Your Workout Expert</Text>
@@ -15,36 +15,29 @@ const SplashScreen = () => {
   );
 };
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
-  SplashScreen: {
-    backgroundColor: Color.colorBlack,
+  container: {
     flex: 1,
-    width: "100%",
-    height: 932,
-    overflow: "hidden",
+    backgroundColor: Color.colorBlack,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  LogoStyle: {
-    left: "8%",
-    justifyContent: "center",
-    position: "absolute",
-    width: 200,
-    height: 200,
-    top: 250,
-    alignItems: "center",
-    position: "absolute",
+  logo: {
+    width: windowWidth * 0.4,
+    height: windowHeight * 0.4, // Adjust the height as per your requirement
+    marginBottom: 20,
   },
   yourWorkoutExpert: {
-    marginLeft: -102,
-    top: 568,
-    fontSize: 18,
-    textTransform: "uppercase",
-    fontStyle: "italic",
-    fontWeight: "300",
+    fontSize: 24,
+    textTransform: 'uppercase',
+    fontStyle: 'italic',
+    fontWeight: '400',
     fontFamily: FontFamily.poppinsLightItalic,
     color: Color.colorWhite,
-    textAlign: "center",
-    left: "50%",
-    position: "absolute",
+    textAlign: 'center',
   },
 });
 

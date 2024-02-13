@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  Dimensions,
 } from 'react-native';
 import {Color, LogoStyle} from '../GlobalStyles';
 import {useNavigation} from '@react-navigation/native';
@@ -27,7 +28,7 @@ const WelcomeScreen = () => {
       <View style={styles.content}>
         <Image
           style={styles.logo}
-          resizeMode="cover"
+          resizeMode="contain"
           source={require('../assets/logo2.png')}
         />
         <TouchableOpacity style={styles.button} onPress={handleGetStarted}>
@@ -38,6 +39,9 @@ const WelcomeScreen = () => {
     </SafeAreaView>
   );
 };
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
@@ -87,9 +91,9 @@ const styles = StyleSheet.create({
     paddingBottom: 20, // Optional: Add padding to the bottom to separate from the edge
   },
   logo: {
-    width: 220,
-    height: 200,
-    marginBottom: 50,
+    width: windowWidth * 0.4,
+    height: windowHeight * 0.4,
+    marginBottom: 40,
   },
 });
 
