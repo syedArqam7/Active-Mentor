@@ -7,7 +7,7 @@ import com.detection.person.PersonDetection;
 import com.location.DetectionLocation;
 import com.logger.SLOG;
 import com.models.ModelManager;
-import com.models.PoseNet;
+import com.models.Thunder;
 import com.utils.InfoBlob;
 import com.utils.SMath;
 
@@ -35,35 +35,35 @@ public class ArmDetection extends BodyPartDetection {
 
         switch (orientation) {
             case LEFT:
-                shoulder = new BodyElement(PoseNet.BODYPART.LEFT_SHOULDER.label, modelType, exerciseLead);
-                elbow = new BodyElement(PoseNet.BODYPART.LEFT_ELBOW.label, modelType, exerciseLead);
-                wrist = new BodyElement(PoseNet.BODYPART.LEFT_WRIST.label, modelType, exerciseLead);
+                shoulder = new BodyElement(Thunder.BODYPART.LEFT_SHOULDER.label, modelType, exerciseLead);
+                elbow = new BodyElement(Thunder.BODYPART.LEFT_ELBOW.label, modelType, exerciseLead);
+                wrist = new BodyElement(Thunder.BODYPART.LEFT_WRIST.label, modelType, exerciseLead);
 
-                if (modelType == ModelManager.MODELTYPE.OLD_POSENET) {
+                if (modelType == ModelManager.MODELTYPE.OLD_POSENET || modelType == ModelManager.MODELTYPE.THUNDER) {
                     pinky = wrist;
                     index = wrist;
                     thumb = wrist;
-                } else { // POSENET_FASTMODE or POSENET
-                    pinky = new BodyElement(PoseNet.BODYPART.LEFT_PINKY.label, modelType, exerciseLead);
-                    index = new BodyElement(PoseNet.BODYPART.LEFT_INDEX.label, modelType, exerciseLead);
-                    thumb = new BodyElement(PoseNet.BODYPART.LEFT_THUMB.label, modelType, exerciseLead);
+                } else { // Thunder_FASTMODE or Thunder
+                    pinky = new BodyElement(Thunder.BODYPART.LEFT_PINKY.label, modelType, exerciseLead);
+                    index = new BodyElement(Thunder.BODYPART.LEFT_INDEX.label, modelType, exerciseLead);
+                    thumb = new BodyElement(Thunder.BODYPART.LEFT_THUMB.label, modelType, exerciseLead);
                 }
 
                 break;
 
             case RIGHT:
-                shoulder = new BodyElement(PoseNet.BODYPART.RIGHT_SHOULDER.label, modelType, exerciseLead);
-                elbow = new BodyElement(PoseNet.BODYPART.RIGHT_ELBOW.label, modelType, exerciseLead);
-                wrist = new BodyElement(PoseNet.BODYPART.RIGHT_WRIST.label, modelType, exerciseLead);
+                shoulder = new BodyElement(Thunder.BODYPART.RIGHT_SHOULDER.label, modelType, exerciseLead);
+                elbow = new BodyElement(Thunder.BODYPART.RIGHT_ELBOW.label, modelType, exerciseLead);
+                wrist = new BodyElement(Thunder.BODYPART.RIGHT_WRIST.label, modelType, exerciseLead);
 
-                if (modelType == ModelManager.MODELTYPE.OLD_POSENET) {
+                if (modelType == ModelManager.MODELTYPE.OLD_POSENET || modelType == ModelManager.MODELTYPE.THUNDER) {
                     pinky = wrist;
                     index = wrist;
                     thumb = wrist;
-                } else { // POSENET_FASTMODE or POSENET
-                    pinky = new BodyElement(PoseNet.BODYPART.RIGHT_PINKY.label, modelType, exerciseLead);
-                    index = new BodyElement(PoseNet.BODYPART.RIGHT_INDEX.label, modelType, exerciseLead);
-                    thumb = new BodyElement(PoseNet.BODYPART.RIGHT_THUMB.label, modelType, exerciseLead);
+                } else { // Thunder_FASTMODE or Thunder
+                    pinky = new BodyElement(Thunder.BODYPART.RIGHT_PINKY.label, modelType, exerciseLead);
+                    index = new BodyElement(Thunder.BODYPART.RIGHT_INDEX.label, modelType, exerciseLead);
+                    thumb = new BodyElement(Thunder.BODYPART.RIGHT_THUMB.label, modelType, exerciseLead);
 
                 }
 

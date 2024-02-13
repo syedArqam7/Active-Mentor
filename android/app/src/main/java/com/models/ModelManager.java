@@ -52,6 +52,15 @@ public final class ModelManager {
             case OLD_POSENET:
                 model = new OldPoseNet();
                 break;
+            case THUNDER:
+                model = new Thunder();
+                break;
+            case LIGHTNING:
+                model = new Lightning();
+                break;
+            case Thunder8:
+                model = new Thunder8();
+                break;
             case SKIP:
                 model = null;
                 break;
@@ -143,7 +152,10 @@ public final class ModelManager {
         POSENET,
         SKIP,
         POSENET_FASTMODE,
-        OLD_POSENET
+        OLD_POSENET,
+        THUNDER,
+        LIGHTNING,
+        Thunder8
     }
 
 }

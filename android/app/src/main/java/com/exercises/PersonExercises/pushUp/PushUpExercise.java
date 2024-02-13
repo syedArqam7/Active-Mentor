@@ -27,10 +27,10 @@ public class PushUpExercise extends AbstractPersonExercise {
     private MODE Mode;
     private double shoulderY, shoulderX, ankleX, ankleY;
     private double slopeShoulderAnkle;
-    private static final double slopeDownUpperLimit = 0.30;
-    private static final double slopeDownLowerLimit = 0.07;
+    private static final double slopeDownUpperLimit = 0.25;
+    private static final double slopeDownLowerLimit = 0.05;
     private static final double slopeUp = 0.40;
-    private static final double MAX_BENT_ALLOWED = 150;
+    private static final double MAX_BENT_ALLOWED = 140;
     private static final long PAUSED_TIME = 2000;
     private long pausedTime = 0;
 

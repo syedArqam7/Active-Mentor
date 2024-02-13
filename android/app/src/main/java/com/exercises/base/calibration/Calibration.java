@@ -128,14 +128,14 @@ public class Calibration {
             rotationZHigh = -80;
             rotationZLow = -95;
 
-            rotationYHigh = 17;
-            rotationYLow = 7;
+            rotationYHigh = 25;
+            rotationYLow = 5;
         } else {
             rotationZHigh = 8;
             rotationZLow = -8;
 
-            rotationYHigh = 25;
-            rotationYLow = 17;
+            rotationYHigh = 30;
+            rotationYLow = 9;
         }
     }
 

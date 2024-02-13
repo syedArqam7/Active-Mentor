@@ -109,13 +109,13 @@ export const ExerciseVariations = {
 
   19: {
     0: 'Side Leg Raise Left',
-    1: 'Side Leg Raise Right'
+    1: 'Side Leg Raise Right',
   },
 
   20: {
     0: 'Hurdle Jumps',
   },
-  
+
   21: {
     0: 'Hop hop',
   },
@@ -140,11 +140,11 @@ export const ExerciseVariations = {
   26: {
     0: 'Person Pose',
   },
-  
+
   28: {
     0: 'Burpees',
   },
- 
+
   29: {
     0: 'SidePlank Dips Left',
     1: 'SidePlank Dips Right',
@@ -192,9 +192,9 @@ export const ExerciseVariations = {
   },
 
   45: {
-    0: 'Bridge'
+    0: 'Bridge',
   },
-  
+
   47: {
     0: 'Lunges',
     1: 'Lateral Lunges',
@@ -229,9 +229,8 @@ export const ExerciseVariations = {
 
   27: {
     0: 'Roll Stops',
-    1: 'Roll Stops With Cones'
+    1: 'Roll Stops With Cones',
   },
- 
 };
 
 export const AI_Exercises = [
@@ -241,7 +240,7 @@ export const AI_Exercises = [
     scoreType: scoreTypes.NREPETITIONS,
     exerciseVariation: 0,
     id: 0,
-    score: 10,
+    score: 50,
     selectedCameraFacing: 'FRONT',
     title: 'High Knees',
     useQuestions: true,
@@ -324,10 +323,12 @@ export const AI_Exercises = [
     title: 'Push Ups',
     useQuestions: false,
   },
-  
+
   {
     countDownMiliSeconds: 30000,
-    description: 'Jump into shown frames according to its shape, the faster, the better.' + 20,
+    description:
+      'Jump into shown frames according to its shape, the faster, the better.' +
+      20,
     scoreType: scoreTypes.NREPETITIONS,
     id: 11,
     score: 20,
@@ -346,7 +347,7 @@ export const AI_Exercises = [
     title: 'Knee Pushup',
     useQuestions: false,
   },
-  
+
   {
     countDownMiliSeconds: 30000,
     description: 'Ladder Run till ' + 15,
@@ -392,7 +393,8 @@ export const AI_Exercises = [
 
   {
     countDownMiliSeconds: 30000,
-    description: "Survival Game\nJump on the patches off grass to ensure they don't grow above you",
+    description:
+      "Survival Game\nJump on the patches off grass to ensure they don't grow above you",
     scoreType: scoreTypes.MAXSECONDS,
     id: 18,
     score: 15,
@@ -477,7 +479,7 @@ export const AI_Exercises = [
     title: 'Burpees',
     useQuestions: false,
   },
-  
+
   {
     countDownMiliSeconds: 30000,
     description: 'SidePlank Dips ' + 15,
@@ -489,7 +491,7 @@ export const AI_Exercises = [
     title: 'SidePlank Dips',
     useQuestions: false,
   },
- 
+
   {
     countDownMiliSeconds: 30000,
     description: 'Jump from left to right, landing on one foot',
@@ -544,7 +546,7 @@ export const AI_Exercises = [
     title: 'Bridge',
     useQuestions: false,
   },
-  
+
   {
     countDownMiliSeconds: 30000,
     description: 'Do some lunges',
@@ -589,7 +591,6 @@ export const AI_Exercises = [
     title: 'Tricep Dips',
     useQuestions: false,
   },
-
 ];
 
 export const BallPerson_AI_Exercises = [
@@ -731,7 +732,6 @@ export const BallPerson_AI_Exercises = [
     title: 'Roll Stops',
     useQuestions: false,
   },
-
 ];
 
 export const Ball_AI_Exercises = [

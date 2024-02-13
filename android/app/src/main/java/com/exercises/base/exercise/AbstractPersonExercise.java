@@ -41,7 +41,7 @@ public abstract class AbstractPersonExercise extends AbstractExercise {
         this(new Calibration(animation), exerciseSettings, ModelManager.MODELTYPE.POSENET, UpperBodyOnly);
 
     }
-
+    //This is the constructor called in most excercises so the model used mostly everywhere is POSENET
     public AbstractPersonExercise(LottieCalibration animation, ExerciseSettings exerciseSettings) {
         this(new Calibration(animation), exerciseSettings, ModelManager.MODELTYPE.POSENET, false);
     }

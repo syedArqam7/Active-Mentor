@@ -6,7 +6,7 @@ import SplashScreen from './Screens/SplashScreen';
 import WelcomeScreen from './Screens/WelcomeScreen';
 import CreateProfile from './Screens/CreateProfile';
 import ExerciseMenu from './Screens/ExerciseMenu';
-import ExerciseScreen from './Screens/ExerciseScreen';
+import ExerciseScreen from './Screens/ExerciseScreenBackup';
 import ExerciseLeaderBoard from './Screens/ExerciseLeaderBoard';
 import ExerciseSummary from './Screens/ExerciseSummary';
 import ExploreScreen from './Screens/ExploreScreen';
