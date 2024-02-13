@@ -19,6 +19,7 @@ import {
   nonAI_Exercises,
   ExerciseVariations,
 } from '../exercise_data';
+import { exercises } from './exercise_list';
 
 const {
   ToastExample,
@@ -31,7 +32,8 @@ const ExerciseScreen = ({route}) => {
   const [frontCameraEnabled, setFrontCameraEnabled] = useState(false);
   const {selectedExercise} = route.params;
 
-  const {name, mins, score, image} = selectedExercise;
+  const exercise = exercises.find((exercise) => exercise.name === selectedExercise);
+  // const {name, mins, score, image} = selectedExercise;
 
   const landscapePositionSwitch = () =>
     setLandscapePosition((previousState) => !previousState);
@@ -44,7 +46,9 @@ const ExerciseScreen = ({route}) => {
 
   const handleStartNow = () => {
     // navigation.navigate('ExerciseSummary', { selectedExercise });
-    const item = AI_Exercises.find((item) => item.title === name);
+    const item = AI_Exercises.find(
+      (item) => item.title === exercise.name,
+    );
     if (frontCameraEnabled) item.selectedCameraFacing = 'FRONT';
     else item.selectedCameraFacing = 'BACK';
     item.countDownMiliSeconds = 10000;
@@ -69,12 +73,12 @@ const ExerciseScreen = ({route}) => {
             <Text style={styles.backButtonText}>Back</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.titleText}>{name}</Text>
-        <Image source={image} style={styles.image} />
+        <Text style={styles.titleText}>{exercise.name}</Text>
+        <Image source={exercise.image} style={styles.image} />
 
         <View style={styles.scoreSection}>
           <Text style={styles.scoreTitle}>Your High Score</Text>
-          <Text style={styles.scoreValue}>{score}</Text>
+          <Text style={styles.scoreValue}>{exercise.score}</Text>
           <Text style={styles.scoreDescription}>
             This Exercise could take 60 mins. Do as many jumping jacks as
             possible & make sure you keep going don't stop

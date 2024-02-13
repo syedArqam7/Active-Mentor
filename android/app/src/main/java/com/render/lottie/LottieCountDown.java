@@ -12,14 +12,13 @@ public class LottieCountDown extends LottieBase<LottieCountDown> {
 
     LottieRender preload;
     LottieRender postLoad;
-
+    // TODO: Code cleanup required
     public LottieCountDown() {
         // super(0, ExerciseActivity.render.getViewBinding().lavCountDown);
         super(R.raw.active_countdown);
         ephemeral(true);
         background(Color.BLACK);
-
-        //TODO: this is not really clean code
+        
         onStart(this::startSound);
 
         preload = createPreload();
