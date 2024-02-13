@@ -19,17 +19,56 @@ import {useNavigation} from '@react-navigation/native';
 
 const SignUpScreen = () => {
   const [focused, setFocused] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [isCheckboxChecked, setCheckboxChecked] = useState(false);
 
   const navigation = useNavigation();
 
   const handleLogin = () => {
     navigation.navigate('LoginScreen');
   };
-  const handleRegister = () => {
-    navigation.navigate('SignUpScreen');
-  };
-  const [isCheckboxChecked, setCheckboxChecked] = useState(false);
 
+  const handleRegister = async () => {
+    try {
+      const registrationData = {
+        name: name,
+        email: email,
+        mobileNumber: mobileNumber,
+      };
+
+      const response = await fetch('http://localhost:3000/api/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(registrationData),
+      });
+
+      if (response.ok) {
+        navigation.navigate('ExploreScreen', {registrationData});
+      } else {
+        console.error('Registration failed:', await response.json());
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+    }
+  };
+
+  // const handleRegister = () => {
+  //   // Perform registration logic with the provided data
+  //   const registrationData = {
+  //     name: name,
+  //     email: email,
+  //     mobileNumber: mobileNumber,
+  //   };
+
+  //   // Navigate to the next screen or perform any other actions
+  //   // navigation.navigate('NextScreen', {registrationData});
+  //   navigation.navigate('SignUpScreen');
+  // };
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#011'}}>
       <KeyboardAvoidingView
@@ -93,7 +132,8 @@ const SignUpScreen = () => {
                 onBlur={() => setFocused(false)}
                 placeholderTextColor={Colors.darkText}
                 placeholder="Name"
-                // keyboardType="email-address"
+                value={name}
+                onChangeText={(text) => setName(text)}
                 style={{flex: 1}}
               />
             </View>
@@ -127,12 +167,14 @@ const SignUpScreen = () => {
                 placeholderTextColor={Colors.darkText}
                 placeholder="Email"
                 keyboardType="email-address"
+                value={email}
+                onChangeText={(text) => setEmail(text)}
                 style={{flex: 1}}
               />
             </View>
 
             {/* Password Input */}
-            <View
+            {/* <View
               style={[
                 {
                   flexDirection: 'row',
@@ -164,7 +206,45 @@ const SignUpScreen = () => {
                 secureTextEntry
                 style={{flex: 1}}
               />
+            </View> */}
+
+            {/* Mobile Number Input */}
+            <View
+              style={[
+                {
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  fontFamily: 'Poppins-Regular',
+                  fontSize: FontSize.small,
+                  paddingLeft: 10,
+                  backgroundColor: Colors.lightPrimary,
+                  borderRadius: 14,
+                  marginVertical: Spacing,
+                },
+                focused && {
+                  borderWidth: 3,
+                  shadowOffset: {width: 4, height: Spacing},
+                  shadowColor: Colors.primary,
+                  shadowOpacity: 0.2,
+                  shadowRadius: Spacing,
+                },
+              ]}>
+              <Image
+                source={require('../assets/Lock.png')} // Replace with your mobile icon
+                style={{width: 20, height: 20, marginRight: 10}}
+              />
+              <TextInput
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+                placeholderTextColor={Colors.darkText}
+                placeholder="Mobile Number"
+                keyboardType="phone-pad" // Use phone-pad for mobile numbers
+                value={mobileNumber}
+                onChangeText={(text) => setMobileNumber(text)}
+                style={{flex: 1}}
+              />
             </View>
+
             {/* Checkbox */}
             <View
               style={{

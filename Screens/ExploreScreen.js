@@ -39,19 +39,19 @@ const ExploreScreen = () => {
   const exercises = [
     {
       title: 'High Knees',
-      imageSource: require('../assets/exercises/high_knees.png'),
+      imageSource: require('../assets/exercises/highknee.jpg'),
     },
     {
       title: 'Jumping Jacks',
-      imageSource: require('../assets/exercises/jumping_jack.png'),
+      imageSource: require('../assets/exercises/jumping.jpeg'),
     },
     {
       title: 'Push Ups',
-      imageSource: require('../assets/exercises/jumping_jack.png'),
+      imageSource: require('../assets/exercises/push_ups.jpg'),
     },
     {
       title: 'Squats',
-      imageSource: require('../assets/exercises/jumping_jack.png'),
+      imageSource: require('../assets/exercises/squat.jpg'),
     },
     {
       title: 'Burpees',
@@ -92,8 +92,7 @@ const ExploreScreen = () => {
             {exercises.map((exercise, index) => (
               <View key={index} style={styles.imageWithTextContainer}>
                 <TouchableOpacity
-                  onPress={() => handleExerciseTabClick(exercise.title)}
-                >
+                  onPress={() => handleExerciseTabClick(exercise.title)}>
                   <Image source={exercise.imageSource} style={styles.image} />
                   <View style={styles.overlay} />
                   <Text style={styles.imageText}>{exercise.title}</Text>
@@ -139,17 +138,21 @@ const ExploreScreen = () => {
         <View style={styles.featureCard}>
           <TouchableOpacity onPress={handleBackPress}>
             <Image
-              source={require('../assets/exercise1.png')}
+              source={require('../assets/exercises/exercise.jpg')}
               style={styles.featureImage}
             />
+            <View style={styles.overlay} />
+            <Text style={styles.allExerciseLabel}>All Excercises</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.featureCard}>
           <TouchableOpacity onPress={handleContinue}>
             <Image
-              source={require('../assets/leaderboard.png')}
+              source={require('../assets/exercises/squat.jpg')}
               style={styles.featureImage}
             />
+            <View style={styles.overlay} />
+            <Text style={styles.allExerciseLabel}>Leaderboard</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -168,8 +171,8 @@ const styles = StyleSheet.create({
   },
   imageText: {
     position: 'absolute',
-    bottom: 20, // Adjust the distance from the bottom as needed
-    left: 5, // Adjust the distance from the left as needed
+    bottom: 10, // Adjust the distance from the bottom as needed
+    left: 10, // Adjust the distance from the left as needed
     color: 'white', // Adjust the text color as needed
     fontWeight: 'bold', // Adjust the font weight as needed
     fontSize: 16, // Adjust the fontSize as needed
@@ -213,9 +216,18 @@ const styles = StyleSheet.create({
   },
   featureImage: {
     width: '100%',
-    height: 150,
+    height: 400,
     borderRadius: 10,
   },
+  allExerciseLabel: {
+    position: 'absolute',
+    padding:20,
+    bottom: 0, // Adjust the distance from the bottom as needed
+    color: 'white', // Adjust the text color as needed
+    fontSize: 42, // Adjust the fontSize as needed
+    fontFamily:'Poppins-Bold'
+  },
+
   featureText: {
     position: 'absolute',
     bottom: 20, // Adjust the distance from the bottom as needed
@@ -237,11 +249,9 @@ const styles = StyleSheet.create({
   },
   menuTitle: {
     color: '#fff',
-    fontSize: 24,
-    // fontWeight: 'bold',
-    // textAlign: 'left',
+    fontSize: 42,
     marginLeft: 20,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: 'Poppins-Bold',
   },
   tabsScrollContainer: {
     height: 130, // Adjust this height as needed
@@ -252,7 +262,8 @@ const styles = StyleSheet.create({
   scoreCard: {
     backgroundColor: '#1c1c1e',
     borderRadius: 10,
-    padding: 20,
+    paddingHorizontal: 40,
+    paddingVertical: 40,
     marginHorizontal: 20,
     // alignItems: 'center',
   },
@@ -267,8 +278,9 @@ const styles = StyleSheet.create({
   },
   exerciseTitle: {
     color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 42,
+    // fontWeight: 'bold',
+    fontFamily: 'Poppins-Regular',
     marginTop: 10,
   },
   history: {
