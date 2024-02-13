@@ -80,7 +80,7 @@ public class ExerciseClient implements CanDraw {
         running = false;
         score.stop();
         exercise.stop();
-        // if (NativeBridge.isToJson()) writeToJSON(); //save data to CSV - for analysis
+        if (NativeBridge.isToJson()) writeToJSON(); //save data to CSV - for analysis
         exerciseCompleteHelper();
         // end the exercise
         new LottieFinish().onEnd(eActivity::stopExercise).play();
