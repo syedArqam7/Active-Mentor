@@ -14,25 +14,25 @@ public class LottieCountDown extends LottieBase<LottieCountDown> {
     LottieRender postLoad;
     // TODO: Code cleanup required
     public LottieCountDown() {
-        super(R.raw.active_countdown);
+        super(0, ExerciseActivity.render.getViewBinding().lavCountDown);
         ephemeral(true);
-        background(Color.BLACK);
+        // background(Color.BLACK);
         
         onStart(this::startSound);
 
         preload = createPreload();
         preload.onEnd(super::play);
         //onstart is not called, because the view is hidden
-        // preload.onEnd(this::showContainer);
+        preload.onEnd(this::showContainer);
 
-        // onEnd(this::hideContainer);
+        onEnd(this::hideContainer);
 
         postLoad = createPostLoad();
         postLoad.onEnd(this::showUI);
         onEnd(postLoad::play);
 
         maxFrame(193);
-        // setScaleType(ImageView.ScaleType.CENTER_CROP);
+        setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 
     @Override
