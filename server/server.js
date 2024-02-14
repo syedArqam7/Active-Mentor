@@ -41,9 +41,7 @@ mongoose
     console.log(error);
   });
 
-
 // Use the user router
-// app.use("/api/users", userRouter); // Mount the user routes at "/api/users"
 app.use('/api/users', userRoutes);
 
 

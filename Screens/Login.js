@@ -8,6 +8,7 @@ import {
   Image,
   KeyboardAvoidingView,
   Platform,
+  Alert,
 } from 'react-native';
 import React, {useState} from 'react';
 import Spacing from '../constants/Spacing';
@@ -19,6 +20,11 @@ import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
   const [focused, setFocused] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
 
   const navigation = useNavigation();
 
@@ -26,8 +32,58 @@ const LoginScreen = () => {
     navigation.navigate('SignUpScreen');
   };
 
-  const handleLogin = () => {
-    navigation.navigate('ExploreScreen');
+  const handleLogin = async () => {
+    // Reset previous error messages
+    setEmailError('');
+    setPasswordError('');
+
+    // Basic form validation
+    let isValid = true;
+
+    if (!email) {
+      setEmailError('Please enter your email');
+      isValid = false;
+    }
+    if (!password) {
+      setPasswordError('Please enter your password');
+      isValid = false;
+    }
+
+    // Further validation for email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email && !emailRegex.test(email)) {
+      setEmailError('Please enter a valid email address');
+      isValid = false;
+    }
+
+    if (isValid) {
+      const loginData = {
+        email: email,
+        password: password,
+      };
+      try {
+        const response = await fetch(
+          'http://192.168.100.15:3000/api/users/login',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginData),
+          },
+        );
+
+        if (response.ok) {
+          // Login successful, navigate to ExploreScreen or perform any other action
+          Alert.alert('Login successful');
+          navigation.navigate('ExploreScreen', {loginData});
+        } else {
+          console.error('Login failed:', await response.json());
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+      }
+    }
   };
 
   return (
@@ -94,8 +150,13 @@ const LoginScreen = () => {
                 placeholderTextColor={Colors.darkText}
                 placeholder="Email"
                 keyboardType="email-address"
+                value={email}
+                onChangeText={(text) => setEmail(text)} // Update the email state
                 style={{flex: 1}}
               />
+            </View>
+            <View>
+              <Text style={{color: 'red'}}>{emailError}</Text>
             </View>
 
             {/* Password Input */}
@@ -129,8 +190,13 @@ const LoginScreen = () => {
                 placeholderTextColor={Colors.darkText}
                 placeholder="Password"
                 secureTextEntry
+                value={password}
+                onChangeText={(text) => setPassword(text)} // Update the password state
                 style={{flex: 1}}
               />
+            </View>
+            <View>
+              <Text style={{color: 'red'}}>{passwordError}</Text>
             </View>
           </View>
 

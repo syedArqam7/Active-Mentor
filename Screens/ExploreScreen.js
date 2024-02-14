@@ -10,11 +10,12 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {BottomButton, Color} from '../GlobalStyles';
 
-const ExploreScreen = () => {
+const ExploreScreen = ({route}) => {
   const [isHistoryTab, setHistoryTab] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState('Jumping Jacks'); // ['Jumping Jacks', 'High Knees', 'Push Ups', 'Squats', 'Lunges', 'All'
   const [score, setScore] = useState(50); // [0 - 100
   const navigation = useNavigation();
+  // const {registrationData} = route.params;
 
   const handleBackPress = () => {
     navigation.navigate('ExerciseMenu');
@@ -221,11 +222,11 @@ const styles = StyleSheet.create({
   },
   allExerciseLabel: {
     position: 'absolute',
-    padding:20,
+    padding: 20,
     bottom: 0, // Adjust the distance from the bottom as needed
     color: 'white', // Adjust the text color as needed
     fontSize: 42, // Adjust the fontSize as needed
-    fontFamily:'Poppins-Bold'
+    fontFamily: 'Poppins-Bold',
   },
 
   featureText: {

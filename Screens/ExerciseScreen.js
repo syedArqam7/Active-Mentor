@@ -9,17 +9,10 @@ import {
   SafeAreaView,
   ScrollView,
   NativeModules,
+  Dimensions,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {
-  exerciseTypes,
-  AI_Exercises,
-  BallPerson_AI_Exercises,
-  Ball_AI_Exercises,
-  nonAI_Exercises,
-  ExerciseVariations,
-} from '../exercise_data';
-import { exercises } from './exercise_list';
+import {exercises} from './exercise_list';
 
 const {
   ToastExample,
@@ -31,9 +24,11 @@ const ExerciseScreen = ({route}) => {
   const [landscapePosition, setLandscapePosition] = useState(false);
   const [frontCameraEnabled, setFrontCameraEnabled] = useState(false);
   const {selectedExercise} = route.params;
+  const windowWidth = Dimensions.get('window').height;
 
-  const exercise = exercises.find((exercise) => exercise.name === selectedExercise);
-  // const {name, mins, score, image} = selectedExercise;
+  const exercise = exercises.find(
+    (exercise) => exercise.name === selectedExercise,
+  );
 
   const landscapePositionSwitch = () =>
     setLandscapePosition((previousState) => !previousState);
@@ -45,10 +40,7 @@ const ExerciseScreen = ({route}) => {
   };
 
   const handleStartNow = () => {
-    // navigation.navigate('ExerciseSummary', { selectedExercise });
-    const item = AI_Exercises.find(
-      (item) => item.title === exercise.name,
-    );
+    const item = AI_Exercises.find((item) => item.title === exercise.name);
     if (frontCameraEnabled) item.selectedCameraFacing = 'FRONT';
     else item.selectedCameraFacing = 'BACK';
     item.countDownMiliSeconds = 10000;
@@ -74,8 +66,10 @@ const ExerciseScreen = ({route}) => {
           </TouchableOpacity>
         </View>
         <Text style={styles.titleText}>{exercise.name}</Text>
-        <Image source={exercise.image} style={styles.image} />
-
+        <Image
+          source={exercise.image}
+          style={[styles.image, {height: windowWidth * 0.4}]}
+        />
         <View style={styles.scoreSection}>
           <Text style={styles.scoreTitle}>Your High Score</Text>
           <Text style={styles.scoreValue}>{exercise.score}</Text>
@@ -131,15 +125,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
   },
-  headerText: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  backButton: {
-    // marginBottom: 20,
-  },
+  backButton: {},
   backButtonText: {
     color: '#fff',
   },
@@ -151,7 +137,6 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 200,
     borderRadius: 10,
     marginBottom: 20,
   },

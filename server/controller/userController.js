@@ -1,102 +1,67 @@
-const People = require('../models/userModel');
+const User = require('../models/userModel');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const createToken = (_id) => {
-  return jwt.sign({_id}, process.env.JWT_SECRET, {expiresIn: '1d'});
-};
-
-// login a user
-// const loginUser = async (req, res) => {
-//   const { email, password } = req.body;
-
-//   try {
-//     const user = await People.login(email, password);
-
-//     // create a token
-//     const token = createToken(user._id);
-
-//     res.status(200).json({ email, token });
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// };
-
-const LoginUser = async (req, res) => {
-  try {
-    let token;
-    const {email, password} = req.body;
-
-    console.log(email);
-    console.log(password);
-
-    if (!email || !password) {
-      return res.status(400).json({error: 'Please fill the data'});
-    }
-
-    const userLogin = await User.findOne({email});
-    if (userLogin) {
-      const isMatch = await bcrypt.compare(password, userLogin.password);
-
-      token = await userLogin.generateAuthToken();
-      console.log(token);
-
-      res.cookie('jwtoken', token, {
-        expires: new Date(Date.now() + 25892000000),
-        httpOnly: true,
-      });
-
-      if (!isMatch) {
-        res.status(400).json({error: 'Invalid credentials pass'});
-      } else {
-        res.json({message: 'Login success'});
-        res.set('Access-Control-Allow-Origin', 'http://127.0.0.1:5173');
-        res.set('Access-Control-Allow-Credentials', 'true');
-      }
-    } else {
-      res.status(400).json({error: 'Inavalid Credentials'});
-    }
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 const RegisterUser = async (req, res) => {
-  const {email, password} = req.body;
-  //   console.log(name);
-  //   console.log(email);
+  const {name, email, password} = req.body;
 
-  if (!email || !password) {
-    return res.status(422).json({error: 'Please fill the field properly'});
+  if (!name || !email || !password) {
+    return res.status(422).json({error: 'Please fill all the fields properly'});
   }
+
   try {
     const userExist = await User.findOne({email: email});
     if (userExist) {
-      return res.status(422).json({error: 'Email already exist'});
+      return res.status(422).json({error: 'Email already exists'});
     } else {
-      const user = new User({email, password});
+      // Hash the password before saving to the database
+      // const hashedPassword = await bcrypt.hash(password, 12);
+      // const user = new User({name, email, password: hashedPassword});
+      const user = new User({name, email, password});
       await user.save();
       res.status(201).json({message: 'User registered successfully'});
     }
   } catch (err) {
-    console.log(err);
+    console.error(err.message);
+    res.status(500).send('Server Error');
   }
 };
 
-// signup a user
-// const signupUser = async (req, res) => {
-//   const { email, password } = req.body;
+const LoginUser = async (req, res) => {
+  try {
+    const {email, password} = req.body;
 
-//   try {
-//     const user = await People.signup(email, password);
+    if (!email || !password) {
+      return res.status(400).json({error: 'Please provide email and password'});
+    }
 
-//     // create a token
-//     const token = createToken(user._id);
+    const user = await User.findOne({email});
 
-//     res.status(200).json({ email, token });
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// };
+    if (!user) {
+      return res.status(400).json({error: 'Invalid email credentials'});
+    }
 
-module.exports = {RegisterUser, LoginUser};
-// module.exports = { signupUser, loginUser };
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({error: 'Invalid password credentials'});
+    }
+
+    const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET, {
+      expiresIn: '1d',
+    });
+
+    // Set cookie with the token
+    res.cookie('token', token, {
+      expiresIn: new Date(Date.now() + 86400000), // 1 day in milliseconds
+      httpOnly: true,
+    });
+
+    res.json({message: 'Login successful'});
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+};
+
+module.exports = {LoginUser, RegisterUser};

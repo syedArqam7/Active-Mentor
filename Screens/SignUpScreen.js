@@ -8,6 +8,7 @@ import {
   Image,
   KeyboardAvoidingView,
   Platform,
+  Alert,
 } from 'react-native';
 import React, {useState} from 'react';
 import Spacing from '../constants/Spacing';
@@ -21,8 +22,10 @@ const SignUpScreen = () => {
   const [focused, setFocused] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  const [mobileNumber, setMobileNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [isCheckboxChecked, setCheckboxChecked] = useState(false);
 
   const navigation = useNavigation();
@@ -32,43 +35,65 @@ const SignUpScreen = () => {
   };
 
   const handleRegister = async () => {
-    try {
-      const registrationData = {
-        name: name,
-        email: email,
-        mobileNumber: mobileNumber,
-      };
+    // Reset previous error messages
+    setNameError('');
+    setEmailError('');
+    setPasswordError('');
 
-      const response = await fetch('http://localhost:3000/api/users/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(registrationData),
-      });
+    // Basic form validation
+    let isValid = true;
+    if (!name) {
+      setNameError('Please enter your name');
+      isValid = false;
+    }
+    if (!email) {
+      setEmailError('Please enter your email');
+      isValid = false;
+    }
+    if (!password) {
+      setPasswordError('Please enter your password');
+      isValid = false;
+    }
 
-      if (response.ok) {
-        navigation.navigate('ExploreScreen', {registrationData});
-      } else {
-        console.error('Registration failed:', await response.json());
+    // Further validation for email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email && !emailRegex.test(email)) {
+      setEmailError('Please enter a valid email address');
+      isValid = false;
+    }
+
+    if (isValid) {
+      // Proceed with registration
+      try {
+        const registrationData = {
+          name: name,
+          email: email,
+          password: password,
+        };
+
+        const response = await fetch(
+          'http://192.168.100.15:3000/api/users/register',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(registrationData),
+          },
+        );
+
+        if (response.ok) {
+          Alert.alert('Registration successful');
+          navigation.navigate('LoginScreen', {registrationData});
+        } else {
+          console.error('Registration failed:', await response.json());
+        }
+      } catch (error) {
+        console.error('Error during registration:', error);
       }
-    } catch (error) {
-      console.error('Error during registration:', error);
     }
   };
 
-  // const handleRegister = () => {
-  //   // Perform registration logic with the provided data
-  //   const registrationData = {
-  //     name: name,
-  //     email: email,
-  //     mobileNumber: mobileNumber,
-  //   };
-
-  //   // Navigate to the next screen or perform any other actions
-  //   // navigation.navigate('NextScreen', {registrationData});
-  //   navigation.navigate('SignUpScreen');
-  // };
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#011'}}>
       <KeyboardAvoidingView
@@ -102,7 +127,7 @@ const SignUpScreen = () => {
           </View>
 
           <View style={{marginVertical: Spacing}}>
-            {/* Email Input */}
+            {/* name Input */}
             <View
               style={[
                 {
@@ -136,6 +161,9 @@ const SignUpScreen = () => {
                 onChangeText={(text) => setName(text)}
                 style={{flex: 1}}
               />
+            </View>
+            <View>
+              <Text style={{color: 'red'}}>{nameError}</Text>
             </View>
             <View
               style={[
@@ -172,9 +200,12 @@ const SignUpScreen = () => {
                 style={{flex: 1}}
               />
             </View>
+            <View>
+              <Text style={{color: 'red'}}>{emailError}</Text>
+            </View>
 
             {/* Password Input */}
-            {/* <View
+            <View
               style={[
                 {
                   flexDirection: 'row',
@@ -204,12 +235,17 @@ const SignUpScreen = () => {
                 placeholderTextColor={Colors.darkText}
                 placeholder="Password"
                 secureTextEntry
+                value={password} // Add this line to bind the value to the state
+                onChangeText={(text) => setPassword(text)} // Update the password state
                 style={{flex: 1}}
               />
-            </View> */}
+            </View>
+            <View>
+              <Text style={{color: 'red'}}>{passwordError}</Text>
+            </View>
 
             {/* Mobile Number Input */}
-            <View
+            {/* <View
               style={[
                 {
                   flexDirection: 'row',
@@ -243,7 +279,7 @@ const SignUpScreen = () => {
                 onChangeText={(text) => setMobileNumber(text)}
                 style={{flex: 1}}
               />
-            </View>
+            </View> */}
 
             {/* Checkbox */}
             <View
@@ -288,7 +324,7 @@ const SignUpScreen = () => {
         {/* Move down content */}
         <View>
           <TouchableOpacity
-            onPress={handleLogin}
+            onPress={handleRegister}
             style={{
               padding: Spacing,
               backgroundColor: Colors.primary,

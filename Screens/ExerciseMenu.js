@@ -7,6 +7,7 @@ import {
   StyleSheet,
   ImageBackground,
   Image,
+  Dimensions,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Color} from '../GlobalStyles';
@@ -15,6 +16,8 @@ import {exercises} from './exercise_list';
 const ExerciseMenu = () => {
   const navigation = useNavigation();
   const [selectedExercise, setSelectedExercise] = useState('Jumping Jacks');
+  const windowWidth = Dimensions.get('window').width;
+  const windowHeight = Dimensions.get('window').height;
 
   const handleContinue = (exercise) => {
     navigation.navigate('ExerciseScreen', {selectedExercise: exercise.name});
@@ -23,7 +26,9 @@ const ExerciseMenu = () => {
   const renderExerciseCards = () => {
     return exercises.map((exercise, index) => (
       <View key={index} style={styles.cardContainer}>
-        <ImageBackground style={styles.cardImage} source={exercise.image}>
+        <ImageBackground
+          style={[styles.cardImage, {height: windowHeight * 0.24}]}
+          source={exercise.image}>
           <View style={styles.overlay}>
             <View style={styles.progressBarContainer}>
               <View
@@ -36,7 +41,10 @@ const ExerciseMenu = () => {
             <View style={styles.cardContent}>
               <View style={styles.cardTopRow}>
                 <View style={styles.cardTopRight}>
-                  <Text style={styles.cardTitle}>{exercise.name}</Text>
+                  <Text
+                    style={[styles.cardTitle, {fontSize: windowWidth * 0.025}]}>
+                    {exercise.name}
+                  </Text>
                 </View>
                 <View style={styles.cardTopLeft}>
                   <Text style={styles.scoreText}>{exercise.score}</Text>
@@ -44,12 +52,15 @@ const ExerciseMenu = () => {
                 </View>
               </View>
               <View style={styles.cardBottomRow}>
-                <Text style={styles.cardSubtitle}>
+                <Text
+                  style={[
+                    styles.cardSubtitle,
+                    {fontSize: windowWidth * 0.013},
+                  ]}>
                   {exercise.mins} mins more
                 </Text>
                 <TouchableOpacity
                   style={styles.button}
-                  // onPress={() => handleContinue(exercise.name)}
                   onPress={() => handleContinue(exercise)}>
                   <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
@@ -137,14 +148,12 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     color: '#fff',
-    fontSize: 28,
     marginBottom: 5,
     width: '65%',
     fontFamily: 'Poppins-Regular',
   },
   cardSubtitle: {
     color: '#fff',
-    fontSize: 16,
     fontFamily: 'Poppins-Regular',
   },
   scoreText: {
