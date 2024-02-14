@@ -15,11 +15,9 @@ const WelcomeScreen = () => {
   const navigation = useNavigation();
 
   const handleGetStarted = () => {
-    navigation.navigate('SignUpScreen');
-  };
-  const handleLogin = () => {
     navigation.navigate('LoginScreen');
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
