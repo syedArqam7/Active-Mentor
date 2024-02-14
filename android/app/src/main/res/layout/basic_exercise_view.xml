@@ -60,7 +60,7 @@
             android:background="@color/colorBlack"
             android:text="Stop"
             android:layout_marginEnd="10dp"
-            android:textColor="@color/jogo"
+            android:textColor="@color/active"
             android:visibility="gone" />
 
         <Button
@@ -70,7 +70,7 @@
             android:background="@color/colorBlack"
             android:layout_toEndOf="@id/stopButton"
             android:text="Restart"
-            android:textColor="@color/jogo"
+            android:textColor="@color/active"
             android:visibility="gone" />
 
             <Spinner
@@ -273,7 +273,7 @@
                 android:id="@+id/containerCountDown"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/jogo"
+                android:background="@color/active"
                 android:orientation="horizontal"
                 android:visibility="gone">
 

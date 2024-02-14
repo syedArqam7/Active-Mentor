@@ -11,8 +11,8 @@ import com.facebook.react.bridge.ReactMethod;
 
 public class NativeBridge extends ReactContextBaseJavaModule {
 
-    private final static boolean DEBUG = true;
-    private final static boolean TO_JSON = true;
+    private final static boolean DEBUG = false;
+    private final static boolean TO_JSON = false;
 
     public static boolean isDebug(){
         return DEBUG;

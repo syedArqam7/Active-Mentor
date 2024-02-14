@@ -34,4 +34,7 @@
   <color name="jogo_transparent">#80DBFF00</color>
   <color name="countDownPurple">#AA37FF</color>
   <color name="wrongAnswer">#FF1744</color>
+
+  <color name="active">#EC9F05</color>
+  <color name="active_transparent">#80EC9F05</color>
 </resources>
