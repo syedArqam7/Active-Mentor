@@ -66,7 +66,7 @@ public class SClock {
             viewBinding.chrTimer.setBase(SystemClock.elapsedRealtime() + time - this.getElapsed());
             viewBinding.chrTimer.setCountDown(true);
             viewBinding.chrTimer.start();
-            viewBinding.lavTimer.setBackgroundColor(eActivity.getResources().getColor(R.color.jogo));
+            viewBinding.lavTimer.setBackgroundColor(eActivity.getResources().getColor(R.color.active));
 
         });
     }

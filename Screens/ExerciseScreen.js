@@ -12,6 +12,8 @@ import {
   Dimensions,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+
+import { AI_Exercises } from '../exercise_data';
 import {exercises} from './exercise_list';
 
 const {
