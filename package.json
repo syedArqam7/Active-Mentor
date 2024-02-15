@@ -20,7 +20,7 @@
     "react-native-check-box": "^2.1.7",
     "react-native-console-time-polyfill": "^1.2.1",
     "react-native-debugger": "^1.1.0",
-    "react-native-screens": "3.11.1"
+    "react-native-screens": "^3.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

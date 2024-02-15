@@ -23,6 +23,10 @@ const ExerciseMenu = () => {
     navigation.navigate('ExerciseScreen', {selectedExercise: exercise.name});
   };
 
+  const handleBackPress = () => {
+    navigation.navigate('ExploreScreen');
+  };
+
   const renderExerciseCards = () => {
     return exercises.map((exercise, index) => (
       <View key={index} style={styles.cardContainer}>
@@ -75,6 +79,9 @@ const ExerciseMenu = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <TouchableOpacity style={styles.backButton} onPress={handleBackPress}>
+          <Text style={styles.backButtonText}>Back</Text>
+        </TouchableOpacity>
         <Text style={styles.title}>Exercises</Text>
         <Image style={styles.logo} source={require('../assets/logo2.png')} />
       </View>
@@ -99,8 +106,9 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#fff',
-    fontSize: 28,
+    fontSize: 38,
     fontFamily: 'Poppins-Bold',
+    textAlign: 'center',
   },
   logo: {
     width: 50,
@@ -183,6 +191,20 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
+    fontFamily: 'Poppins-Bold',
+  },
+
+  backButton: {
+    // marginLeft: 20,
+    padding: 10,
+    width: 100,
+    backgroundColor: '#EC9F05',
+    borderRadius: 10,
+  },
+  backButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    textAlign: 'center',
     fontFamily: 'Poppins-Bold',
   },
 });

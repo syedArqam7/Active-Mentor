@@ -27,6 +27,8 @@ const ExploreScreen = ({route}) => {
   };
 
   const handleLeaderboardTabClick = () => {
+    navigation.navigate('ExerciseLeaderBoard', {selectedExercise});
+
     setHistoryTab(false);
   };
 
@@ -36,6 +38,13 @@ const ExploreScreen = ({route}) => {
 
   const handleExerciseTabClick = (exercise) => {
     setSelectedExercise(exercise);
+  };
+
+  // Add this function for logout
+  const handleLogout = () => {
+    // Perform logout actions here, such as clearing local storage, resetting state, etc.
+    // Then navigate back to the login screen
+    navigation.navigate('LoginScreen');
   };
 
   const exercises = [
@@ -82,6 +91,9 @@ const ExploreScreen = ({route}) => {
           <Text style={styles.menuTitle}>
             Hey, <Text style={styles.highlightedText}>{name}!</Text>{' '}
           </Text>
+          <TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>
+            <Text style={styles.logoutButtonText}>Logout</Text>
+          </TouchableOpacity>
 
           <Text style={styles.menuTitle}>Let's start exploring</Text>
         </View>
@@ -123,9 +135,8 @@ const ExploreScreen = ({route}) => {
             <View style={styles.scoreContainer}>
               <View style={styles.con1}>
                 <Text style={styles.exerciseTitle}>{selectedExercise}</Text>
-                <View>
-                  <Text style={styles.scoreLabel}>Score {score}</Text>
-                  <Text style={styles.scoreLabel}>Streaks {score}</Text>
+                <View style={styles.continueButton}>
+                  <Text style={styles.continueButtonText}>Score {score}</Text>
                 </View>
               </View>
             </View>
@@ -148,7 +159,7 @@ const ExploreScreen = ({route}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.featureCard}>
-          <TouchableOpacity onPress={handleContinue}>
+          <TouchableOpacity onPress={handleLeaderboardTabClick}>
             <Image
               source={require('../assets/exercises/squat.jpg')}
               style={styles.featureImage}
@@ -287,18 +298,19 @@ const styles = StyleSheet.create({
   },
   history: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 42,
     fontWeight: 'bold',
   },
   score: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
   },
   scoreLabel: {
     color: '#fff',
     fontSize: 16,
     marginBottom: 10,
+    textAlign: 'center',
   },
   timeLeft: {
     color: '#fff',
@@ -306,17 +318,35 @@ const styles = StyleSheet.create({
   },
   continueButton: {
     backgroundColor: '#EC9F05',
-    borderRadius: 5,
+    borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    alignSelf: 'stretch',
+    // alignSelf: 'stretch',
     alignItems: 'center',
     marginVertical: 10,
   },
   continueButtonText: {
     color: '#fff',
-    fontSize: 12,
-    fontWeight: 'bold',
+    fontSize: 16,
+    textAlign: 'center',
+    fontFamily: 'Poppins-Bold',
+  },
+  // Add styles for the logout button
+  logoutButton: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    backgroundColor: '#EC9F05',
+    borderRadius: 10,
+    width: 100,
+  },
+  logoutButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    textAlign: 'center',
+    fontFamily: 'Poppins-Bold',
   },
 });
 

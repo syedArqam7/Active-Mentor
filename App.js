@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import SplashScreen from './Screens/SplashScreen';
 import WelcomeScreen from './Screens/WelcomeScreen';
@@ -15,7 +16,6 @@ import SignUpScreen from './Screens/SignUpScreen';
 import LoginScreen from './Screens/Login';
 
 const Stack = createNativeStackNavigator();
-
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = useState(false); // Initially false to show the splash screen
@@ -32,17 +32,34 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         {!hideSplashScreen && (
-          <Stack.Screen name="SplashScreen" component={SplashScreen} />
+          <Stack.Screen
+            name="SplashScreen"
+            component={SplashScreen}
+            options={{headerShown: false}}
+          />
         )}
         {hideSplashScreen && (
           <>
-            <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-            <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-            <Stack.Screen name="LoginScreen" component={LoginScreen} />
+            <Stack.Screen
+              name="WelcomeScreen"
+              component={WelcomeScreen}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="SignUpScreen"
+              component={SignUpScreen}
+              // options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="LoginScreen"
+              component={LoginScreen}
+              // options={{headerShown: false}}
+            />
             <Stack.Screen name="CreateProfile" component={CreateProfile} />
             <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
             <Stack.Screen name="ExerciseMenu" component={ExerciseMenu} />
             <Stack.Screen name="ExerciseScreen" component={ExerciseScreen} />
+            
             <Stack.Screen
               name="ExerciseLeaderBoard"
               component={ExerciseLeaderBoard}

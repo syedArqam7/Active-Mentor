@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import { AI_Exercises } from '../exercise_data';
+import {AI_Exercises} from '../exercise_data';
 import {exercises} from './exercise_list';
 
 const {
@@ -127,13 +127,22 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
   },
-  backButton: {},
+  backButton: {
+    // marginLeft: 20,
+    padding: 10,
+    width: 100,
+    backgroundColor: '#EC9F05',
+    borderRadius: 10,
+  },
   backButtonText: {
     color: '#fff',
+    fontSize: 16,
+    textAlign: 'center',
+    fontFamily: 'Poppins-Bold',
   },
   titleText: {
     fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold',
     color: '#fff',
     marginBottom: 10,
   },
@@ -184,7 +193,7 @@ const styles = StyleSheet.create({
   startButtonText: {
     fontSize: 16,
     color: '#fff',
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold',
   },
 });
 
