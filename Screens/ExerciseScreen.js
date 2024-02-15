@@ -38,7 +38,7 @@ const ExerciseScreen = ({route}) => {
     setFrontCameraEnabled((previousState) => !previousState);
 
   const handleBackPress = () => {
-    navigation.navigate('ExploreScreen');
+    navigation.navigate('ExerciseMenu');
   };
 
   const handleStartNow = () => {
