@@ -107,7 +107,6 @@
                         android:layout_width="@dimen/dimen_130"
                         android:layout_height="@dimen/dimen_60"
                         app:lottie_autoPlay="true"
-                        app:lottie_rawRes="@raw/timer_box"
                         app:lottie_loop="false" />
 
                     <TextView
@@ -158,7 +157,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="@dimen/dimen_5"
                         app:lottie_autoPlay="true"
-                        app:lottie_rawRes="@raw/score_counter_green"
+                        app:lottie_rawRes="@raw/score_counter_orange"
                         app:lottie_loop="false" />
 
                     <TextView
