@@ -13,6 +13,7 @@ import {useNavigation} from '@react-navigation/native';
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
+  
 
   const handleGetStarted = () => {
     navigation.navigate('LoginScreen');

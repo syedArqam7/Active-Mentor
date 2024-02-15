@@ -74,9 +74,9 @@ const LoginScreen = () => {
         );
 
         if (response.ok) {
-          // Login successful, navigate to ExploreScreen or perform any other action
+          const responseData = await response.json(); // Extract response data
           Alert.alert('Login successful');
-          navigation.navigate('ExploreScreen', {loginData});
+          navigation.navigate('ExploreScreen', {name: responseData.name}); // Pass name to ExploreScreen
         } else {
           console.error('Login failed:', await response.json());
         }

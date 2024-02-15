@@ -15,7 +15,8 @@ const ExploreScreen = ({route}) => {
   const [selectedExercise, setSelectedExercise] = useState('Jumping Jacks'); // ['Jumping Jacks', 'High Knees', 'Push Ups', 'Squats', 'Lunges', 'All'
   const [score, setScore] = useState(50); // [0 - 100
   const navigation = useNavigation();
-  // const {registrationData} = route.params;
+
+  const {name} = route.params; // Extracting the name from route params
 
   const handleBackPress = () => {
     navigation.navigate('ExerciseMenu');
@@ -79,7 +80,7 @@ const ExploreScreen = ({route}) => {
         style={styles.tabsScrollContainer}>
         <View style={styles.header}>
           <Text style={styles.menuTitle}>
-            Hey, <Text style={styles.highlightedText}>David!</Text>{' '}
+            Hey, <Text style={styles.highlightedText}>{name}!</Text>{' '}
           </Text>
 
           <Text style={styles.menuTitle}>Let's start exploring</Text>

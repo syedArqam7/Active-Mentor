@@ -57,7 +57,8 @@ const LoginUser = async (req, res) => {
       httpOnly: true,
     });
 
-    res.json({message: 'Login successful'});
+    // res.json({message: 'Login successful'});
+    res.json({message: 'Login successful', name: user.name}); // Include name in the response
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Server Error');
