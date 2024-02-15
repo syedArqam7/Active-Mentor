@@ -32,7 +32,7 @@ public abstract class BodyPartDetection extends ObjectDetection {
         this.person = person;
 
         // default paint
-        this.pointPaint = new JOGOPaint().fillStroke().jogoYellow();
+        this.pointPaint = new JOGOPaint().fillStroke().activeOrange();
     }
 
     public List<ObjectDetection> getBodyElements() {

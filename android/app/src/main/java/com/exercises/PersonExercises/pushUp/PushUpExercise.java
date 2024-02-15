@@ -22,7 +22,7 @@ public class PushUpExercise extends AbstractPersonExercise {
     private static final double RADIUS = 0.1;
     DetectionLocation kneeR, hipR, ankleR, kneeL, hipL, ankleL;
     int resetChance = 0;
-    JOGOPaint timerPaint = new JOGOPaint().jogoYellow().stroke().strokeWidth(30);
+    JOGOPaint timerPaint = new JOGOPaint().activeOrange().stroke().strokeWidth(30);
     private MOTION Motion = MOTION.DOWN;
     private MODE Mode;
     private double shoulderY, shoulderX, ankleX, ankleY;

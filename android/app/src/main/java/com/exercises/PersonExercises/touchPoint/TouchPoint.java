@@ -23,7 +23,7 @@ public class TouchPoint extends Location {
     double X_MAX, Y_MAX, X_MIN, Y_MIN;
     double hiddenHandRadius = radius + 0.01;
     double hiddenFootRadius = radius + 0.012;
-    JOGOPaint timerPaint = new JOGOPaint().jogoYellow().stroke().strokeWidth(20);
+    JOGOPaint timerPaint = new JOGOPaint().activeOrange().stroke().strokeWidth(20);
     private long resolutionTime;
     private STATUS status = STATUS.ACTIVE;
 

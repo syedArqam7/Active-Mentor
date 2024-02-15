@@ -120,7 +120,7 @@ public class TouchPointManager {
     private void drawQuadrants(Canvas canvas) {
         int bound = quadrantMap.size();
         for (int quadrantNum = 0; quadrantNum < bound; quadrantNum++) {
-            JOGOPaint paint = new JOGOPaint().jogoYellow().stroke();
+            JOGOPaint paint = new JOGOPaint().activeOrange().stroke();
             paint.setStrokeWidth(10);
             if (!activeQuadrants.contains("" + quadrantNum))
                 paint.red();
@@ -134,9 +134,9 @@ public class TouchPointManager {
             drawQuadrants(canvas);
         }
         JOGOPaint.getNewDrawDebugHeight();
-        canvas.drawText("quadrant " + currentQuadrantNum, 20, JOGOPaint.getNewDrawDebugHeight(), new JOGOPaint().jogoYellow().medium());
+        canvas.drawText("quadrant " + currentQuadrantNum, 20, JOGOPaint.getNewDrawDebugHeight(), new JOGOPaint().activeOrange().medium());
         JOGOPaint.getNewDrawDebugHeight();
-        canvas.drawText("mode " + exerciseMode, 20, JOGOPaint.getNewDrawDebugHeight(), new JOGOPaint().jogoYellow().medium());
+        canvas.drawText("mode " + exerciseMode, 20, JOGOPaint.getNewDrawDebugHeight(), new JOGOPaint().activeOrange().medium());
 
     }
 

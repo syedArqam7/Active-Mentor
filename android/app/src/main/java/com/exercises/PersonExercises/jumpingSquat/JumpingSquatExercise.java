@@ -35,7 +35,7 @@ public class JumpingSquatExercise extends AbstractPersonExercise {
     @Override
     protected void drawExerciseDebug(Canvas canvas) {
 // uncomment when required or during debugging.
-//        canvas.drawText("Score: " + score.getCount(), 200, getNewDrawDebugHeight(), new JOGOPaint().jogoYellow().large());
+//        canvas.drawText("Score: " + score.getCount(), 200, getNewDrawDebugHeight(), new JOGOPaint().activeOrange().large());
 
 //        canvas.drawLine(0, (float) hipLocationY * canvas.getHeight(), canvas.getWidth(), (float) hipLocationY * canvas.getHeight(), new JOGOPaint().blue().mediumStroke());
 //        canvas.drawLine(0, (float) kneeLocationY * canvas.getHeight(), canvas.getWidth(), (float) kneeLocationY * canvas.getHeight(), new JOGOPaint().yellow().mediumStroke());

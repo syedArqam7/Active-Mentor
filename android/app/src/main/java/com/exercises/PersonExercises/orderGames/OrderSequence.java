@@ -14,7 +14,7 @@ public class OrderSequence extends Location {
     private boolean correct;
     private int seqNumber;
     private JOGOPaint colorPaint;
-    private final JOGOPaint pText = new JOGOPaint().jogoYellow().bioSansBold().center();
+    private final JOGOPaint pText = new JOGOPaint().activeOrange().bioSansBold().center();
 
     public OrderSequence(double radius, double centerX, double centerY, int seqNumber, double visibleRadius) {
         super(centerX, centerY);

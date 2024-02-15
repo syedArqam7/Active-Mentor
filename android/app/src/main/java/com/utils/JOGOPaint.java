@@ -195,6 +195,11 @@ public class JOGOPaint extends Paint {
         return (this);
     }
 
+    public JOGOPaint activeOrange() {
+        this.setColor(Color.parseColor("#EC9F05"));
+        return (this);
+    }
+
     public JOGOPaint black() {
         this.setColor(Color.BLACK);
         return (this);

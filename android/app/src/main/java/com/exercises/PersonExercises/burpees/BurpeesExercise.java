@@ -48,9 +48,9 @@ public class BurpeesExercise extends AbstractPersonExercise {
         // uncomment when required or during debugging.
 //        drawTextLargeDebug(canvas, "Motion " + motion);
 //        JOGOPaint.getNewDrawDebugHeight();
-//        canvas.drawText("belowMidLine " + isBelowMidLine , JOGOPaint.xValue, JOGOPaint.getNewDrawDebugHeight(), new JOGOPaint().jogoYellow().medium());
+//        canvas.drawText("belowMidLine " + isBelowMidLine , JOGOPaint.xValue, JOGOPaint.getNewDrawDebugHeight(), new JOGOPaint().activeOrange().medium());
 //        JOGOPaint.getNewDrawDebugHeight();
-//        canvas.drawText("rightAngle: " + person.rightArm.getShoulderAngle(), JOGOPaint.xValue, JOGOPaint.getNewDrawDebugHeight(),  new JOGOPaint().jogoYellow().medium());
+//        canvas.drawText("rightAngle: " + person.rightArm.getShoulderAngle(), JOGOPaint.xValue, JOGOPaint.getNewDrawDebugHeight(),  new JOGOPaint().activeOrange().medium());
 
         downPose.drawDebug(canvas);
 
@@ -59,7 +59,7 @@ public class BurpeesExercise extends AbstractPersonExercise {
                 (float) midLine * canvas.getHeight(),
                 0.9f * canvas.getWidth(),
                 (float) midLine * canvas.getHeight(),
-                new JOGOPaint().large().jogoYellow());
+                new JOGOPaint().large().activeOrange());
 
         canvas.drawLine(
                 0.1f * canvas.getWidth(),

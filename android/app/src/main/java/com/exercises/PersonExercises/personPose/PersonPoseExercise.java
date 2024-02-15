@@ -64,7 +64,7 @@ public class PersonPoseExercise extends AbstractPersonExercise {
         // uncomment when required or during debugging.
 
 //        canvas.drawText("00:0" + ((int) (posePerformTime - SystemClock.elapsedRealtime()) / 1000), 650,
-//                JOGOPaint.getNewDrawDebugHeight(), new JOGOPaint().jogoYellow().large());
+//                JOGOPaint.getNewDrawDebugHeight(), new JOGOPaint().activeOrange().large());
 
 //        drawTextLargeDebug(canvas, "00:0" + ((int) (posePerformTime - SystemClock.elapsedRealtime()) / 1000));
 //

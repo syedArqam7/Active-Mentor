@@ -33,7 +33,7 @@ public class Bone implements CanDraw {
 
     @Override
     public void drawDebug(Canvas canvas) {
-        drawDebug(canvas, new JOGOPaint().jogoYellow().mediumStroke());
+        drawDebug(canvas, new JOGOPaint().activeOrange().mediumStroke());
     }
 
     public void drawDebug(Canvas canvas, Paint paint) { //drawDebug replica

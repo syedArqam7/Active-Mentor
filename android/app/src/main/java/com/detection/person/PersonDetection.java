@@ -236,7 +236,7 @@ public class PersonDetection extends ObjectDetection {
     }
 
 
-    JOGOPaint bbPaint = new JOGOPaint().jogoYellow().strokeWidth(30).stroke().transparancy(0.5);
+    JOGOPaint bbPaint = new JOGOPaint().activeOrange().strokeWidth(30).stroke().transparancy(0.5);
 
     public void drawBBox(Canvas canvas) {
         List<DetectionLocation> lastLocations = getDetectionSubClasses().stream().map(ObjectDetection::getLocation)
