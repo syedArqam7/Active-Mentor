@@ -49,36 +49,36 @@ const ExploreScreen = ({route}) => {
 
   const exercises = [
     {
-      title: 'High Knees',
-      imageSource: require('../assets/exercises/highknee.jpg'),
+      title: 'Squats',
+      imageSource: require('../assets/exercises/squat.jpg'),
     },
     {
       title: 'Jumping Jacks',
       imageSource: require('../assets/exercises/jumping.jpeg'),
     },
     {
+      title: 'High Knees',
+      imageSource: require('../assets/exercises/highknee.jpg'),
+    },
+    {
       title: 'Push Ups',
       imageSource: require('../assets/exercises/push_ups.jpg'),
     },
     {
-      title: 'Squats',
-      imageSource: require('../assets/exercises/squat.jpg'),
+      title: 'Deadlift',
+      imageSource: require('../assets/exercises/deadlift.jpg'),
     },
     {
-      title: 'Burpees',
-      imageSource: require('../assets/exercises/jumping_jack.png'),
-    },
-    {
-      title: 'Knee Pushup',
-      imageSource: require('../assets/exercises/jumping_jack.png'),
-    },
-    {
-      title: 'Ladder Run',
-      imageSource: require('../assets/exercises/jumping_jack.png'),
+      title: 'Planks',
+      imageSource: require('../assets/exercises/plank.jpg'),
     },
     {
       title: 'Side Plank',
-      imageSource: require('../assets/exercises/jumping_jack.png'),
+      imageSource: require('../assets/exercises/sidePlank.jpg'),
+    },
+    {
+      title: 'Knee Pushup',
+      imageSource: require('../assets/exercises/kneePushups.jpg'),
     },
   ];
 
