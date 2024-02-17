@@ -37,4 +37,5 @@
 
   <color name="active">#EC9F05</color>
   <color name="active_transparent">#80EC9F05</color>
+  <color name="ic_launcher_background">#000000</color>
 </resources>
