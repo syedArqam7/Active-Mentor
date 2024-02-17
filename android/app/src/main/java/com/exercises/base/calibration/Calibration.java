@@ -36,7 +36,7 @@ public class Calibration {
     public boolean keepBitmapAspectRation = true;
     public float rotationSensorY = 0;
     public float rotationSensorZ = 0;
-    protected int CALIBRATIONTIME = 1000;
+    protected int CALIBRATIONTIME = 700;
     protected float topScreen = TOP_SCREEN;
     protected float bottomScreen = BOTTOM_SCREEN;
     protected float leftScreen = LEFT_SCREEN;
@@ -128,8 +128,8 @@ public class Calibration {
             rotationZHigh = -80;
             rotationZLow = -95;
 
-            rotationYHigh = 25;
-            rotationYLow = 5;
+            rotationYHigh = 50;
+            rotationYLow = -10;
         } else {
             rotationZHigh = 8;
             rotationZLow = -8;

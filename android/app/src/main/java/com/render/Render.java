@@ -163,7 +163,7 @@ public class Render {
 
     public void scoreSound() {
         if (!running) return;
-        new SoundRender(R.raw.score_count).play();
+        new SoundRender(R.raw.active_score).play();
     }
 
 

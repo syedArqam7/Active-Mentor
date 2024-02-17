@@ -169,7 +169,7 @@ public abstract class AbstractExercise {
 
     protected void drawOutText(Canvas canvas) {
         if (textPaint == null)
-            textPaint = new JOGOPaint().yellow().textSize(130).align(Paint.Align.CENTER).bioSansBold(eActivity.getAssets());
+            textPaint = new JOGOPaint().activeOrange().textSize(130).align(Paint.Align.CENTER).bioSansBold(eActivity.getAssets());
 
         float y = 0.5f;
         for (String line : outText.split("\n")) {
