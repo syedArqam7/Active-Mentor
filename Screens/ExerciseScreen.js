@@ -23,8 +23,8 @@ const {
 
 const ExerciseScreen = ({route}) => {
   const navigation = useNavigation();
-  const [landscapePosition, setLandscapePosition] = useState(false);
-  const [frontCameraEnabled, setFrontCameraEnabled] = useState(false);
+  const [landscapePosition, setLandscapePosition] = useState(true);
+  const [frontCameraEnabled, setFrontCameraEnabled] = useState(true);
   const {selectedExercise} = route.params;
   const windowWidth = Dimensions.get('window').height;
 

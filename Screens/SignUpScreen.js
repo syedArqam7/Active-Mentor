@@ -21,9 +21,11 @@ import {useNavigation} from '@react-navigation/native';
 const SignUpScreen = () => {
   const [focused, setFocused] = useState(false);
   const [name, setName] = useState('');
+  const [mobileNumber, setMobileNumber] = useState(''); // Add this line
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nameError, setNameError] = useState('');
+  const [mobileNumberError, setMobileNumberError] = useState(''); // Add this line
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [isCheckboxChecked, setCheckboxChecked] = useState(false);
@@ -54,6 +56,10 @@ const SignUpScreen = () => {
       setPasswordError('Please enter your password');
       isValid = false;
     }
+    // if (!mobileNumber) {
+    //   setMobileNumberError('Please enter your mobile number');
+    //   isValid = false;
+    // }
 
     // Further validation for email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -69,6 +75,7 @@ const SignUpScreen = () => {
           name: name,
           email: email,
           password: password,
+          phone: mobileNumber,
         };
 
         const response = await fetch(
@@ -201,7 +208,46 @@ const SignUpScreen = () => {
               />
             </View>
             <View>
-              <Text style={{color: 'red'}}>{emailError}</Text>
+              <Text style={{color: 'red'}}>{mobileNumberError}</Text>
+            </View>
+
+            <View
+              style={[
+                {
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  fontFamily: 'Poppins-Regular',
+                  fontSize: FontSize.small,
+                  paddingLeft: 10,
+                  backgroundColor: Colors.lightPrimary,
+                  borderRadius: 14,
+                  marginVertical: Spacing,
+                },
+                focused && {
+                  borderWidth: 3,
+                  shadowOffset: {width: 4, height: Spacing},
+                  shadowColor: Colors.primary,
+                  shadowOpacity: 0.2,
+                  shadowRadius: Spacing,
+                },
+              ]}>
+              <Image
+                source={require('../assets/Phone.png')}
+                style={{width: 20, height: 20, marginRight: 10}}
+              />
+              <TextInput
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+                placeholderTextColor={Colors.darkText}
+                placeholder="Mobile Number"
+                keyboardType="phone-pad"
+                value={mobileNumber}
+                onChangeText={(text) => setMobileNumber(text)}
+                style={{flex: 1}}
+              />
+            </View>
+            <View>
+              <Text style={{color: 'red'}}>{mobileNumberError}</Text>
             </View>
 
             {/* Password Input */}
