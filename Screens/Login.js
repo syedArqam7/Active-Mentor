@@ -22,6 +22,7 @@ const LoginScreen = () => {
   const [focused, setFocused] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // const [isGuest, setIsGuest] = useState(false);
 
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -32,8 +33,12 @@ const LoginScreen = () => {
     navigation.navigate('SignUpScreen');
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (isGuest) => {
     // Reset previous error messages
+    if (isGuest) {
+      navigation.navigate('ExploreScreen', {name: 'Guest'});
+      return;
+    }
     setEmailError('');
     setPasswordError('');
 
@@ -55,31 +60,6 @@ const LoginScreen = () => {
       setEmailError('Please enter a valid email address');
       isValid = false;
     }
-
-    // if (isValid) {
-    //   const users = [
-    //     {email: 'zav@gmail.com', password: 'zav', name: 'Zaviar'},
-    //     {email: 'ali@gmail.com', password: 'ali', name: 'Ali'},
-    //   ];
-
-    //   // Find user by email
-    //   const user = users.find((user) => user.email === email);
-
-    //   if (user) {
-    //     // Check if password matches
-    //     if (user.password === password) {
-    //       // Login successful
-    //       Alert.alert('Login successful');
-    //       navigation.navigate('ExploreScreen', {name: user.name});
-    //     } else {
-    //       // Password is incorrect
-    //       setPasswordError('Incorrect password');
-    //     }
-    //   }
-    // } else {
-    //   // User not found
-    //   setEmailError('User not found');
-    // }
 
     const loginData = {
       email: email,
@@ -236,12 +216,34 @@ const LoginScreen = () => {
               Forgot your password?
             </Text>
           </View>
+          
+          <View style={{marginVertical: Spacing}}></View>
+          
+          <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+            <TouchableOpacity
+              onPress={() => handleLogin(true)}
+              style={{
+                marginLeft: 5,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+            <Text
+              style={{
+                fontFamily: 'Poppins-Regular',
+                fontSize: FontSize.small,
+                color: Colors.text,
+                textDecorationLine: 'underline',
+              }}>
+              Continue as a guest?
+            </Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
         {/* Move down content */}
         <View>
           <TouchableOpacity
-            onPress={handleLogin}
+            onPress={() => handleLogin(false)}
             style={{
               padding: Spacing,
               backgroundColor: Colors.primary,
