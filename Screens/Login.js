@@ -56,57 +56,57 @@ const LoginScreen = () => {
       isValid = false;
     }
 
-    if (isValid) {
-      const users = [
-        {email: 'zav@gmail.com', password: 'zav', name: 'Zaviar'},
-        {email: 'ali@gmail.com', password: 'ali', name: 'Ali'},
-      ];
+    // if (isValid) {
+    //   const users = [
+    //     {email: 'zav@gmail.com', password: 'zav', name: 'Zaviar'},
+    //     {email: 'ali@gmail.com', password: 'ali', name: 'Ali'},
+    //   ];
 
-      // Find user by email
-      const user = users.find((user) => user.email === email);
+    //   // Find user by email
+    //   const user = users.find((user) => user.email === email);
 
-      if (user) {
-        // Check if password matches
-        if (user.password === password) {
-          // Login successful
-          Alert.alert('Login successful');
-          navigation.navigate('ExploreScreen', {name: user.name});
-        } else {
-          // Password is incorrect
-          setPasswordError('Incorrect password');
-        }
-      }
-    } else {
-      // User not found
-      setEmailError('User not found');
-    }
-
-    // const loginData = {
-    //   email: email,
-    //   password: password,
-    // };
-    // try {
-    //   const response = await fetch(
-    //     'http://192.168.100.15:3000/api/users/login',
-    //     {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(loginData),
-    //     },
-    //   );
-
-    //   if (response.ok) {
-    //     const responseData = await response.json(); // Extract response data
-    //     Alert.alert('Login successful');
-    //     navigation.navigate('ExploreScreen', {name: responseData.name}); // Pass name to ExploreScreen
-    //   } else {
-    //     console.error('Login failed:', await response.json());
+    //   if (user) {
+    //     // Check if password matches
+    //     if (user.password === password) {
+    //       // Login successful
+    //       Alert.alert('Login successful');
+    //       navigation.navigate('ExploreScreen', {name: user.name});
+    //     } else {
+    //       // Password is incorrect
+    //       setPasswordError('Incorrect password');
+    //     }
     //   }
-    // } catch (error) {
-    //   console.error('Error during login:', error);
+    // } else {
+    //   // User not found
+    //   setEmailError('User not found');
     // }
+
+    const loginData = {
+      email: email,
+      password: password,
+    };
+    try {
+      const response = await fetch(
+        'https://server-teal-eight.vercel.app/api/users/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(loginData),
+        },
+      );
+
+      if (response.ok) {
+        const responseData = await response.json(); // Extract response data
+        Alert.alert('Login successful');
+        navigation.navigate('ExploreScreen', {name: responseData.name}); // Pass name to ExploreScreen
+      } else {
+        console.error('Login failed:', await response.json());
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
   };
 
   return (

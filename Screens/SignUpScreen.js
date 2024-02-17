@@ -72,7 +72,7 @@ const SignUpScreen = () => {
         };
 
         const response = await fetch(
-          'http://192.168.100.15:3000/api/users/register',
+          'https://server-teal-eight.vercel.app/api/users/register',
           {
             method: 'POST',
             headers: {
