@@ -59,7 +59,7 @@ const App = () => {
             <Stack.Screen name="ExploreScreen" component={ExploreScreen} />
             <Stack.Screen name="ExerciseMenu" component={ExerciseMenu} />
             <Stack.Screen name="ExerciseScreen" component={ExerciseScreen} />
-            
+
             <Stack.Screen
               name="ExerciseLeaderBoard"
               component={ExerciseLeaderBoard}
@@ -69,6 +69,7 @@ const App = () => {
         )}
       </Stack.Navigator>
     </NavigationContainer>
+
     // <AI />
   );
 };

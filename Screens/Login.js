@@ -98,7 +98,8 @@ const LoginScreen = () => {
       );
 
       if (response.ok) {
-        const responseData = await response.json(); // Extract response data
+        const responseData = await response.json();
+
         Alert.alert('Login successful');
         navigation.navigate('ExploreScreen', {name: responseData.name}); // Pass name to ExploreScreen
       } else {

@@ -24,7 +24,7 @@ const ExerciseMenu = () => {
   };
 
   const handleBackPress = () => {
-    navigation.navigate('ExploreScreen');
+    navigation.goBack();
   };
 
   const renderExerciseCards = () => {

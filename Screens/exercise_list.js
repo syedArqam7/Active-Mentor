@@ -2,7 +2,7 @@ export const exercises = [
   {
     name: 'Squats',
     mins: '15',
-    score: '76',
+    score: '86',
     image: require('../assets/exercises/squat.jpg'),
   },
   {
@@ -14,7 +14,7 @@ export const exercises = [
   {
     name: 'High Knees',
     mins: '25',
-    score: '54',
+    score: '64',
     image: require('../assets/exercises/highknee.jpg'),
   },
   {
@@ -26,25 +26,25 @@ export const exercises = [
   {
     name: 'Deadlift',
     mins: '15',
-    score: '76',
+    score: '30',
     image: require('../assets/exercises/deadlift.jpg'),
   },
   {
     name: 'Planks',
     mins: '15',
-    score: '76',
+    score: '91',
     image: require('../assets/exercises/plank.jpg'),
   },
   {
     name: 'Side Plank',
     mins: '15',
-    score: '76',
+    score: '53',
     image: require('../assets/exercises/sidePlank.jpg'),
   },
   {
     name: 'Knee Pushup',
     mins: '15',
-    score: '76',
+    score: '47',
     image: require('../assets/exercises/kneePushups.jpg'),
   },
   // Add other exercises here

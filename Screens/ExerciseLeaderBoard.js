@@ -13,7 +13,7 @@ const ExerciseLeaderBoard = () => {
   const [activeTab, setActiveTab] = useState('Global');
 
   const handleBackPress = () => {
-    navigation.navigate('ExploreScreen');
+    navigation.goBack();
   };
 
   const handleTabPress = (tab) => {

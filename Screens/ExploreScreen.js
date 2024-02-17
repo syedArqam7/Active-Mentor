@@ -9,12 +9,18 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {BottomButton, Color} from '../GlobalStyles';
+import {exercises} from './exercise_list';
 
 const ExploreScreen = ({route}) => {
   const [isHistoryTab, setHistoryTab] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState('Jumping Jacks'); // ['Jumping Jacks', 'High Knees', 'Push Ups', 'Squats', 'Lunges', 'All'
   const [score, setScore] = useState(50); // [0 - 100
   const navigation = useNavigation();
+
+    const selectedExerciseScore =
+      exercises.find((exercise) => exercise.name === selectedExercise)?.score ||
+      'N/A';
+
 
   const {name} = route.params; // Extracting the name from route params
 
@@ -47,40 +53,40 @@ const ExploreScreen = ({route}) => {
     navigation.navigate('LoginScreen');
   };
 
-  const exercises = [
-    {
-      title: 'Squats',
-      imageSource: require('../assets/exercises/squat.jpg'),
-    },
-    {
-      title: 'Jumping Jacks',
-      imageSource: require('../assets/exercises/jumping.jpeg'),
-    },
-    {
-      title: 'High Knees',
-      imageSource: require('../assets/exercises/highknee.jpg'),
-    },
-    {
-      title: 'Push Ups',
-      imageSource: require('../assets/exercises/push_ups.jpg'),
-    },
-    {
-      title: 'Deadlift',
-      imageSource: require('../assets/exercises/deadlift.jpg'),
-    },
-    {
-      title: 'Planks',
-      imageSource: require('../assets/exercises/plank.jpg'),
-    },
-    {
-      title: 'Side Plank',
-      imageSource: require('../assets/exercises/sidePlank.jpg'),
-    },
-    {
-      title: 'Knee Pushup',
-      imageSource: require('../assets/exercises/kneePushups.jpg'),
-    },
-  ];
+  // const exercises = [
+  //   {
+  //     title: 'Squats',
+  //     imageSource: require('../assets/exercises/squat.jpg'),
+  //   },
+  //   {
+  //     title: 'Jumping Jacks',
+  //     imageSource: require('../assets/exercises/jumping.jpeg'),
+  //   },
+  //   {
+  //     title: 'High Knees',
+  //     imageSource: require('../assets/exercises/highknee.jpg'),
+  //   },
+  //   {
+  //     title: 'Push Ups',
+  //     imageSource: require('../assets/exercises/push_ups.jpg'),
+  //   },
+  //   {
+  //     title: 'Deadlift',
+  //     imageSource: require('../assets/exercises/deadlift.jpg'),
+  //   },
+  //   {
+  //     title: 'Planks',
+  //     imageSource: require('../assets/exercises/plank.jpg'),
+  //   },
+  //   {
+  //     title: 'Side Plank',
+  //     imageSource: require('../assets/exercises/sidePlank.jpg'),
+  //   },
+  //   {
+  //     title: 'Knee Pushup',
+  //     imageSource: require('../assets/exercises/kneePushups.jpg'),
+  //   },
+  // ];
 
   return (
     <View style={styles.container}>
@@ -106,10 +112,10 @@ const ExploreScreen = ({route}) => {
             {exercises.map((exercise, index) => (
               <View key={index} style={styles.imageWithTextContainer}>
                 <TouchableOpacity
-                  onPress={() => handleExerciseTabClick(exercise.title)}>
-                  <Image source={exercise.imageSource} style={styles.image} />
+                  onPress={() => handleExerciseTabClick(exercise.name)}>
+                  <Image source={exercise.image} style={styles.image} />
                   <View style={styles.overlay} />
-                  <Text style={styles.imageText}>{exercise.title}</Text>
+                  <Text style={styles.imageText}>{exercise.name}</Text>
                 </TouchableOpacity>
               </View>
             ))}
@@ -136,7 +142,9 @@ const ExploreScreen = ({route}) => {
               <View style={styles.con1}>
                 <Text style={styles.exerciseTitle}>{selectedExercise}</Text>
                 <View style={styles.continueButton}>
-                  <Text style={styles.continueButtonText}>Score {score}</Text>
+                  <Text style={styles.continueButtonText}>
+                    Score: {selectedExerciseScore}
+                  </Text>
                 </View>
               </View>
             </View>

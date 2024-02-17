@@ -36,10 +36,11 @@ const ExerciseScreen = ({route}) => {
     setLandscapePosition((previousState) => !previousState);
   const toggleFrontCameraSwitch = () =>
     setFrontCameraEnabled((previousState) => !previousState);
-
+  
   const handleBackPress = () => {
-    navigation.navigate('ExerciseMenu');
+    navigation.goBack();
   };
+
 
   const handleStartNow = () => {
     const item = AI_Exercises.find((item) => item.title === exercise.name);
