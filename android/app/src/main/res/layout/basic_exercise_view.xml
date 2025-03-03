@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:components="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="scoreCount"
+            type="String" />
+
+        <variable
+            name="totalCount"
+            type="String" />
+
+        <variable
+            name="maxScore"
+            type="String" />
+
+        <variable
+            name="exerciseName"
+            type="String" />
+
+        <variable
+            name="exerciseDescription"
+            type="String" />
+    </data>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/containerParent"
+        android:layout_height="match_parent">
+
+        <com.views.AutoFitTextureView
+            android:id="@+id/texture"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.views.OverlayView
+            android:id="@+id/tracking_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/texture"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:text="Stop"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/active"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:layout_toEndOf="@id/stopButton"
+            android:text="Restart"
+            android:textColor="@color/active"
+            android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/gearSettings"
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/gear"
+                android:visibility="gone"/>
+
+
+
+            <RelativeLayout
+                android:id="@+id/timeScoreAnimationContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:visibility="visible"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/containerTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:visibility="gone">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lavTimer"
+                        android:layout_width="@dimen/dimen_130"
+                        android:layout_height="@dimen/dimen_60"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="false" />
+
+                    <TextView
+                        android:id="@+id/txtTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/lavTimer"
+                        android:layout_alignTop="@+id/lavTimer"
+                        android:layout_marginStart="@dimen/dimen_12"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:fontFamily="@font/monospec_medium"
+                        android:gravity="center"
+                        android:text="@string/heading_time"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/text_size_10"
+                        android:textStyle="bold|italic" />
+
+                    <Chronometer
+                        android:id="@+id/chrTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/lavTimer"
+                        android:layout_alignTop="@+id/lavTimer"
+                        android:layout_alignEnd="@+id/lavTimer"
+                        android:layout_alignBottom="@+id/lavTimer"
+                        android:layout_marginTop="@dimen/dimen_10"
+                        android:fontFamily="@font/monospec_medium"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/text_size_25"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/containerScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/containerTimer"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="gone">
+
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lavScore"
+                        android:layout_width="@dimen/dimen_150"
+                        android:layout_height="@dimen/dimen_120"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        app:lottie_autoPlay="true"
+                        app:lottie_rawRes="@raw/score_counter_orange"
+                        app:lottie_loop="false" />
+
+                    <TextView
+                        android:id="@+id/txtScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/lavScore"
+                        android:layout_alignTop="@+id/lavScore"
+                        android:layout_marginStart="@dimen/dimen_22"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:fontFamily="@font/monospec_medium"
+                        android:gravity="center"
+                        android:text="@string/heading_score"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/text_size_15"
+                        android:textStyle="bold|italic" />
+
+                    <TextView
+                        android:id="@+id/tvScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/lavScore"
+                        android:layout_alignTop="@+id/lavScore"
+                        android:layout_alignRight="@+id/lavScore"
+                        android:layout_alignBottom="@+id/lavScore"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:fontFamily="@font/monospec_medium"
+                        android:gravity="center"
+                        android:text='@{scoreCount, default="00"}'
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/text_size_50"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lavContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/containerCountViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:id="@+id/containerMaxScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/jogo_circle_bg_score"
+                    android:minWidth="60dp"
+                    android:minHeight="40dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/txtMaxScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/monospec_medium"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text='@{maxScore, default="00"}'
+                        android:textColor="#000"
+                        android:textSize="35sp"
+                        android:visibility="visible" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/containerTotalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="-45dp"
+                    android:background="@drawable/jogo_circle_bg_score"
+                    android:minWidth="60dp"
+                    android:minHeight="40dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/txtTotalScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/monospec_medium"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text='@{totalCount, default="00"}'
+                        android:textColor="#000"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="90dp"
+                    android:layout_height="1dp"
+                    android:layout_toEndOf="@id/containerTotalScore" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/containerCountDown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/active"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lavCountDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:paddingStart="@dimen/dimen_200"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="false"
+                        app:lottie_rawRes="@raw/combined_countdown_right"
+                        app:lottie_loop="false" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+</layout>
